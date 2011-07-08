@@ -23,7 +23,6 @@ namespace Kevin.Permission.Domain.Core
             set;
         }
 
-
         #endregion
 
         #region EntityBase<int> override
