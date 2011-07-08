@@ -1,0 +1,10 @@
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\obj\Debug\ResolveAssemblyReference.cache
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\bin\Debug\Kevin.Permission.Domain.Core.dll
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\bin\Debug\Kevin.Permission.Domain.Core.pdb
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\bin\Debug\Kevin.Infrastructure.Domain.dll
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\bin\Debug\Kevin.Infrastructure.Domain.EntityFramework.dll
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\obj\Debug\Kevin.Permission.Domain.Core.dll
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\obj\Debug\Kevin.Permission.Domain.Core.pdb
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\obj\Debug\Kevin.Permission.Domain.Core.Resource.Messages.resources
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\obj\Debug\GenerateResource.read.1.tlog
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\obj\Debug\GenerateResource.write.1.tlog
