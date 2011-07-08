@@ -2,7 +2,6 @@ E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\obj\Debug\Res
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\bin\Debug\Kevin.Permission.Domain.Core.dll
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\bin\Debug\Kevin.Permission.Domain.Core.pdb
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\bin\Debug\Kevin.Infrastructure.Domain.dll
-E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\bin\Debug\Kevin.Infrastructure.Domain.EntityFramework.dll
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\obj\Debug\Kevin.Permission.Domain.Core.dll
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\obj\Debug\Kevin.Permission.Domain.Core.pdb
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core\obj\Debug\Kevin.Permission.Domain.Core.Resource.Messages.resources

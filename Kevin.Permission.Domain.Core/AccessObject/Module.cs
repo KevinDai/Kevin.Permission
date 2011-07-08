@@ -34,7 +34,6 @@ namespace Kevin.Permission.Domain.Core
 
         #endregion
 
-
         #region EntityBase<int> override
 
         /// <summary>
@@ -42,6 +41,14 @@ namespace Kevin.Permission.Domain.Core
         /// </summary>
         protected override void Validate()
         {
+            if (string.IsNullOrEmpty(Name))
+            {
+                AddBrokenRule(new BusinessRule("Name", "必须输入模块名称"));
+            }
+            if (string.IsNullOrEmpty(Code))
+            {
+                AddBrokenRule(new BusinessRule("Code", "必须输入操作编码"));
+            }
         }
 
         #endregion

@@ -37,6 +37,10 @@ namespace Kevin.Permission.Domain.Core
         /// </summary>
         protected override void Validate()
         {
+            if (string.IsNullOrEmpty(Name))
+            {
+                AddBrokenRule(new BusinessRule("Name", "必须输入用户名称"));
+            }
         }
 
         #endregion

@@ -16,7 +16,7 @@ namespace Kevin.Permission.Domain.Core
         /// <summary>
         /// 角色类型
         /// </summary>
-        public RoleCategory Category { get; protected set; }
+        public RoleCategory Category { get; private set; }
         /// <summary>
         /// 角色名称
         /// </summary>
@@ -30,6 +30,19 @@ namespace Kevin.Permission.Domain.Core
 
         #region Constructor
 
+        public Role()
+        {
+        }
+
+        public Role(RoleCategory roleCategory)
+        {
+            if (roleCategory == null)
+            {
+                throw new ArgumentNullException("roleCategory");
+            }
+            Category = Category;
+        }
+
         #endregion
 
         #region EntityBase<int> override
@@ -39,6 +52,10 @@ namespace Kevin.Permission.Domain.Core
         /// </summary>
         protected override void Validate()
         {
+            if (string.IsNullOrEmpty(Name))
+            {
+                AddBrokenRule(new BusinessRule("Name", "必须输入角色名称"));
+            }
         }
 
         #endregion

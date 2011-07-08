@@ -7,12 +7,12 @@ using Kevin.Infrastructure.Domain;
 namespace Kevin.Permission.Domain.Core
 {
     /// <summary>
-    /// 操作权限对象类
+    /// 操作对象类
     /// <example>
     /// 查看，编辑，管理
     /// </example>
     /// </summary>
-    public class Operation : EntityBase<int>
+    public class Operation : EntityBase<int>, IAggregateRoot
     {
 
         #region Members
@@ -44,6 +44,14 @@ namespace Kevin.Permission.Domain.Core
         /// </summary>
         protected override void Validate()
         {
+            if (string.IsNullOrEmpty(Name))
+            {
+                AddBrokenRule(new BusinessRule("Name", "必须输入操作名称"));
+            }
+            if (string.IsNullOrEmpty(Code))
+            {
+                AddBrokenRule(new BusinessRule("Code", "必须输入操作编码"));
+            }
         }
 
         #endregion

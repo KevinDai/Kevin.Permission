@@ -68,5 +68,23 @@ namespace Kevin.Permission.Domain.Core.Resource {
                 return ResourceManager.GetString("exception_InvalidInheritValue", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   查找类似 无效的访问对象,访问对象为范围控制访问对象 的本地化字符串。
+        /// </summary>
+        internal static string exception_PermissionConfig_InvlidAccessObject {
+            get {
+                return ResourceManager.GetString("exception_PermissionConfig_InvlidAccessObject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 进行权限设置的操作不属于权限配置对象中访问对象的操作 的本地化字符串。
+        /// </summary>
+        internal static string exception_PermissionConfigBase_SetOperationPermission_OperationInvalid {
+            get {
+                return ResourceManager.GetString("exception_PermissionConfigBase_SetOperationPermission_OperationInvalid", resourceCulture);
+            }
+        }
     }
 }

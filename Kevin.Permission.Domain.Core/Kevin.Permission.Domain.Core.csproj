@@ -34,9 +34,6 @@
     <Reference Include="Kevin.Infrastructure.Domain">
       <HintPath>..\Lib\Kevin.Infrastructure\Kevin.Infrastructure.Domain.dll</HintPath>
     </Reference>
-    <Reference Include="Kevin.Infrastructure.Domain.EntityFramework">
-      <HintPath>..\Lib\Kevin.Infrastructure\Kevin.Infrastructure.Domain.EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,9 +46,14 @@
     <Compile Include="AccessObject\AccessObject.cs" />
     <Compile Include="AccessObject\IAccessObjectRepository.cs" />
     <Compile Include="AccessObject\IModuleRepository.cs" />
+    <Compile Include="AccessObject\IOperationRepository.cs" />
     <Compile Include="AccessObject\Module.cs" />
     <Compile Include="AccessObject\Operation.cs" />
+    <Compile Include="PermissionConfig\ICommonPermissionConfigRepository.cs" />
+    <Compile Include="PermissionConfig\OperationConfig.cs" />
+    <Compile Include="PermissionConfig\CommonPermissionConfig.cs" />
     <Compile Include="PermissionConfig\PermissionConfigBase.cs" />
+    <Compile Include="PermissionConfig\RangePermissionConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource\Messages.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -69,6 +71,8 @@
     <Compile Include="User\User.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AccessObject\_AccessObject.cd" />
+    <None Include="PermissionConfig\_PermissionConfig.cd" />
     <None Include="Role\_Role.cd" />
     <None Include="UserRoleRelation\_UserRoleRelation.cd" />
     <None Include="User\_User.cd" />
