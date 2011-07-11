@@ -44,22 +44,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessObject\AccessObject.cs" />
+    <Compile Include="AccessObject\AccessObjectMuduleSpecification.cs" />
     <Compile Include="AccessObject\IAccessObjectRepository.cs" />
     <Compile Include="AccessObject\IModuleRepository.cs" />
     <Compile Include="AccessObject\IOperationRepository.cs" />
     <Compile Include="AccessObject\Module.cs" />
     <Compile Include="AccessObject\Operation.cs" />
+    <Compile Include="PermissionService\CommonPermission.cs" />
+    <Compile Include="PermissionService\CommonPermissionService.cs" />
+    <Compile Include="PermissionService\ICommonPermissionService.cs" />
     <Compile Include="PermissionConfig\ICommonPermissionConfigRepository.cs" />
-    <Compile Include="PermissionConfig\OperationConfig.cs" />
+    <Compile Include="PermissionConfig\OperationPermissionConfig.cs" />
     <Compile Include="PermissionConfig\CommonPermissionConfig.cs" />
+    <Compile Include="PermissionConfig\PermissionConfigBaseAccessObjectSpecification.cs" />
+    <Compile Include="PermissionConfig\PermissionConfigBaseRolesSpecification.cs" />
     <Compile Include="PermissionConfig\PermissionConfigBase.cs" />
     <Compile Include="PermissionConfig\RangePermissionConfig.cs" />
+    <Compile Include="PermissionService\OperationPermission.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource\Messages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Messages.resx</DependentUpon>
     </Compile>
+    <Compile Include="Role\RoleCategorySpecifaction.cs" />
     <Compile Include="Role\RoleInheritType.cs" />
     <Compile Include="Role\IRoleCategoryRepository.cs" />
     <Compile Include="Role\IRoleRepository.cs" />

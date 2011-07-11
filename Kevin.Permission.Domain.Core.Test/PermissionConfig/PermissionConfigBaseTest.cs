@@ -22,7 +22,7 @@ namespace Kevin.Permission.Domain.Core.Test
             //验证
             Assert.AreSame(role, permissionConfig.Role);
             Assert.AreSame(accessObject, permissionConfig.AccessObject);
-            Assert.IsNotNull(permissionConfig.OperationConfigs);
+            Assert.IsNotNull(permissionConfig.OperationPermissionConfigs);
         }
 
         [TestMethod]

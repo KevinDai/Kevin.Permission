@@ -7,7 +7,7 @@ using Kevin.Infrastructure.Domain;
 namespace Kevin.Permission.Domain.Core
 {
     /// <summary>
-    /// 用户数据仓库接口定义
+    /// 用户数据仓库接口
     /// </summary>
     public interface IUserRepository : IRepository<User, int>
     {

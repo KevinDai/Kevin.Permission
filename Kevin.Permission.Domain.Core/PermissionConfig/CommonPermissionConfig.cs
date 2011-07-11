@@ -27,7 +27,7 @@ namespace Kevin.Permission.Domain.Core
         {
             if (accessObject.RangeAccess)
             {
-                throw new ArgumentException(Resource.Messages.exception_PermissionConfig_InvlidAccessObject, "accessObject");
+                throw new ArgumentException(Resource.Messages.exception_AccessObjectRangeAccessNeedFalse, "accessObject");
             }
         }
 

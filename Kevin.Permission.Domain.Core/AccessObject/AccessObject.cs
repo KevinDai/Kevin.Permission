@@ -55,16 +55,9 @@ namespace Kevin.Permission.Domain.Core
         /// </summary>
         public ICollection<Operation> Operations
         {
-            get
-            {
-                return _operations;
-            }
-            private set
-            {
-                _operations = value;
-            }
+            get;
+            private set;
         }
-        private ICollection<Operation> _operations;
 
         #endregion
 
@@ -72,7 +65,7 @@ namespace Kevin.Permission.Domain.Core
 
         public AccessObject()
         {
-            _operations = new List<Operation>();
+            Operations = new List<Operation>();
         }
 
         public AccessObject(Module module, bool rangeAcess)
@@ -84,6 +77,20 @@ namespace Kevin.Permission.Domain.Core
             }
             Module = module;
             RangeAccess = rangeAcess;
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// 判断访问对象是否包含指定的操作
+        /// </summary>
+        /// <param name="operation">操作</param>
+        /// <returns>是否包含操作</returns>
+        public bool Contains(Operation operation)
+        {
+            return Operations.Any(o => o.Id == operation.Id);
         }
 
         #endregion

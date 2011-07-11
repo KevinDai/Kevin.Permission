@@ -36,7 +36,7 @@ namespace Kevin.Permission.Domain.Core
         /// <summary>
         /// 对访问对象的操作权限配置列表
         /// </summary>
-        public ICollection<OperationConfig> OperationConfigs
+        public ICollection<OperationPermissionConfig> OperationPermissionConfigs
         {
             get;
             private set;
@@ -75,12 +75,12 @@ namespace Kevin.Permission.Domain.Core
         /// </summary>
         private void OperationConfigCollectionInitialize()
         {
-            List<OperationConfig> list = new List<OperationConfig>();
+            List<OperationPermissionConfig> list = new List<OperationPermissionConfig>();
             foreach (var operation in AccessObject.Operations)
             {
-                list.Add(new OperationConfig(this, operation));
+                list.Add(new OperationPermissionConfig(this, operation));
             }
-            this.OperationConfigs = new ReadOnlyCollection<OperationConfig>(list);
+            this.OperationPermissionConfigs = new ReadOnlyCollection<OperationPermissionConfig>(list);
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Kevin.Permission.Domain.Core
         /// <returns>操作列表</returns>
         public IEnumerable<Operation> GetSetPermitStatusOperations()
         {
-            var operations = OperationConfigs.Where(oc => oc.Permit).Select(oc => oc.Operation);
+            var operations = OperationPermissionConfigs.Where(oc => oc.Permit).Select(oc => oc.Operation);
             return operations;
         }
 
@@ -99,7 +99,7 @@ namespace Kevin.Permission.Domain.Core
         /// <returns>操作列表</returns>
         public IEnumerable<Operation> GetSetDenyStatusOperations()
         {
-            var operations = OperationConfigs.Where(oc => oc.Deny).Select(oc => oc.Operation);
+            var operations = OperationPermissionConfigs.Where(oc => oc.Deny).Select(oc => oc.Operation);
             return operations;
         }
 
@@ -108,9 +108,9 @@ namespace Kevin.Permission.Domain.Core
         /// </summary>
         /// <param name="operation">操作对象</param>
         /// <returns>操作权限配置对象</returns>
-        public OperationConfig GetOperationConfig(Operation operation)
+        public OperationPermissionConfig GetOperationConfig(Operation operation)
         {
-            return OperationConfigs.SingleOrDefault(oc => oc.Operation == operation);
+            return OperationPermissionConfigs.SingleOrDefault(oc => oc.Operation == operation);
         }
 
         /// <summary>

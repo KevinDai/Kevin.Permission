@@ -9,7 +9,7 @@ namespace Kevin.Permission.Domain.Core
     /// <summary>
     /// 操作的权限配置对象
     /// </summary>
-    public class OperationConfig : EntityBase<int>
+    public class OperationPermissionConfig : EntityBase<int>
     {
 
         #region Members
@@ -54,11 +54,11 @@ namespace Kevin.Permission.Domain.Core
 
         #region Constructor
 
-        public OperationConfig()
+        public OperationPermissionConfig()
         {
         }
 
-        internal OperationConfig(PermissionConfigBase permissionConfig, Operation operation)
+        internal OperationPermissionConfig(PermissionConfigBase permissionConfig, Operation operation)
         {
             PermissionConfig = permissionConfig;
             Operation = operation;

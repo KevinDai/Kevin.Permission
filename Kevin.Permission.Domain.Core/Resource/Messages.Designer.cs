@@ -61,6 +61,42 @@ namespace Kevin.Permission.Domain.Core.Resource {
         }
         
         /// <summary>
+        ///   查找类似 访问对象的操作中不包括给定的操作 的本地化字符串。
+        /// </summary>
+        internal static string exception_AccessObjectNotContainsOperation {
+            get {
+                return ResourceManager.GetString("exception_AccessObjectNotContainsOperation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 无效的访问对象,访问对象必须为非范围控制的访问对象 的本地化字符串。
+        /// </summary>
+        internal static string exception_AccessObjectRangeAccessNeedFalse {
+            get {
+                return ResourceManager.GetString("exception_AccessObjectRangeAccessNeedFalse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 进行权限计算的权限配置对象的访问对象错误 的本地化字符串。
+        /// </summary>
+        internal static string exception_CommonPermissionPermissionCalculateInvalidAccessObject {
+            get {
+                return ResourceManager.GetString("exception_CommonPermissionPermissionCalculateInvalidAccessObject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 进行权限计算的权限配置对象的访问对象的操作配置对象错误 的本地化字符串。
+        /// </summary>
+        internal static string exception_CommonPermissionPermissionCalculateInvalidOperationPermissionConfig {
+            get {
+                return ResourceManager.GetString("exception_CommonPermissionPermissionCalculateInvalidOperationPermissionConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 无效的角色继承类型值 的本地化字符串。
         /// </summary>
         internal static string exception_InvalidInheritValue {
@@ -70,11 +106,11 @@ namespace Kevin.Permission.Domain.Core.Resource {
         }
         
         /// <summary>
-        ///   查找类似 无效的访问对象,访问对象为范围控制访问对象 的本地化字符串。
+        ///   查找类似 进行操作权限计算的操作权限配置对象错误 的本地化字符串。
         /// </summary>
-        internal static string exception_PermissionConfig_InvlidAccessObject {
+        internal static string exception_OperationPermissionCalculateInvalidOperationConfig {
             get {
-                return ResourceManager.GetString("exception_PermissionConfig_InvlidAccessObject", resourceCulture);
+                return ResourceManager.GetString("exception_OperationPermissionCalculateInvalidOperationConfig", resourceCulture);
             }
         }
         
@@ -84,6 +120,15 @@ namespace Kevin.Permission.Domain.Core.Resource {
         internal static string exception_PermissionConfigBase_SetOperationPermission_OperationInvalid {
             get {
                 return ResourceManager.GetString("exception_PermissionConfigBase_SetOperationPermission_OperationInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 进行筛选的角色标识符列表无效 的本地化字符串。
+        /// </summary>
+        internal static string exception_PermissionConfigBaseRolesSpecification_InvalidRoleIds {
+            get {
+                return ResourceManager.GetString("exception_PermissionConfigBaseRolesSpecification_InvalidRoleIds", resourceCulture);
             }
         }
     }

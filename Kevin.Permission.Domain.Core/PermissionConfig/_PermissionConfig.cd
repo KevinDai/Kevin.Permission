@@ -7,17 +7,17 @@
       <FileName>PermissionConfig\RangePermissionConfig.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Kevin.Permission.Domain.Core.OperationConfig" Collapsed="true">
-    <Position X="9" Y="0.5" Width="1.5" />
+  <Class Name="Kevin.Permission.Domain.Core.OperationPermissionConfig">
+    <Position X="7" Y="0.75" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAIIAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
-      <FileName>PermissionConfig\OperationConfig.cs</FileName>
+      <FileName>PermissionConfig\OperationPermissionConfig.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kevin.Permission.Domain.Core.PermissionConfigBase">
     <Position X="3" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAgICAAAAAEAAAAAAAAAAAACIAAAAACEAAAAE=</HashCode>
+      <HashCode>AAAAAAAAgICAAAAAEAAAAAAAAAAAACIAAAAACEEAAAA=</HashCode>
       <FileName>PermissionConfig\PermissionConfigBase.cs</FileName>
     </TypeIdentifier>
   </Class>

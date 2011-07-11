@@ -117,13 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="exception_AccessObjectNotContainsOperation" xml:space="preserve">
+    <value>访问对象的操作中不包括给定的操作</value>
+  </data>
+  <data name="exception_AccessObjectRangeAccessNeedFalse" xml:space="preserve">
+    <value>无效的访问对象,访问对象必须为非范围控制的访问对象</value>
+  </data>
+  <data name="exception_CommonPermissionPermissionCalculateInvalidAccessObject" xml:space="preserve">
+    <value>进行权限计算的权限配置对象的访问对象错误</value>
+  </data>
+  <data name="exception_CommonPermissionPermissionCalculateInvalidOperationPermissionConfig" xml:space="preserve">
+    <value>进行权限计算的权限配置对象的访问对象的操作配置对象错误</value>
+  </data>
   <data name="exception_InvalidInheritValue" xml:space="preserve">
     <value>无效的角色继承类型值</value>
   </data>
+  <data name="exception_OperationPermissionCalculateInvalidOperationConfig" xml:space="preserve">
+    <value>进行操作权限计算的操作权限配置对象错误</value>
+  </data>
+  <data name="exception_PermissionConfigBaseRolesSpecification_InvalidRoleIds" xml:space="preserve">
+    <value>进行筛选的角色标识符列表无效</value>
+  </data>
   <data name="exception_PermissionConfigBase_SetOperationPermission_OperationInvalid" xml:space="preserve">
     <value>进行权限设置的操作不属于权限配置对象中访问对象的操作</value>
-  </data>
-  <data name="exception_PermissionConfig_InvlidAccessObject" xml:space="preserve">
-    <value>无效的访问对象,访问对象为范围控制访问对象</value>
   </data>
 </root>

@@ -7,17 +7,10 @@ using Kevin.Infrastructure.Domain;
 namespace Kevin.Permission.Domain.Core
 {
     /// <summary>
-    /// 角色数据仓库
+    /// 角色数据仓库接口
     /// </summary>
     public interface IRoleRepository : IRepository<Role, int>
     {
-
-        /// <summary>
-        /// 获取指定角色类型的所有角色
-        /// </summary>
-        /// <param name="category">角色类型</param>
-        /// <returns>角色列表</returns>
-        IEnumerable<Role> GetRolesOfCategory(RoleCategory category);
 
         /// <summary>
         /// 获取属于指定用户的所有角色
@@ -55,6 +48,13 @@ namespace Kevin.Permission.Domain.Core
         /// <param name="cascade">是否级联查询</param>
         /// <returns>角色列表</returns>
         IEnumerable<Role> GetDeriveRolesOfRole(Role role, bool cascade);
+
+        /// <summary>
+        /// 级联查询指定角色列表中角色继承的角色列表
+        /// </summary>
+        /// <param name="roles">角色列表</param>
+        /// <returns>角色列表</returns>
+        IEnumerable<Role> GetInheritRolesOfRoles(IEnumerable<Role> roles);
 
     }
 }

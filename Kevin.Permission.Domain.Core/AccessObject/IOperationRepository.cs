@@ -7,7 +7,7 @@ using Kevin.Infrastructure.Domain;
 namespace Kevin.Permission.Domain.Core
 {
     /// <summary>
-    /// 操作类型数据仓库
+    /// 操作类型数据仓库接口
     /// </summary>
     public interface IOperationRepository : IRepository<Operation, int>
     {
