@@ -79,6 +79,15 @@ namespace Kevin.Permission.Domain.Core.Resource {
         }
         
         /// <summary>
+        ///   查找类似 查询权限的指定操作在权限对象中不存在该操作的权限信息 的本地化字符串。
+        /// </summary>
+        internal static string exception_CommonPermissionHavePermissionInvalidOperation {
+            get {
+                return ResourceManager.GetString("exception_CommonPermissionHavePermissionInvalidOperation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 进行权限计算的权限配置对象的访问对象错误 的本地化字符串。
         /// </summary>
         internal static string exception_CommonPermissionPermissionCalculateInvalidAccessObject {
@@ -93,6 +102,15 @@ namespace Kevin.Permission.Domain.Core.Resource {
         internal static string exception_CommonPermissionPermissionCalculateInvalidOperationPermissionConfig {
             get {
                 return ResourceManager.GetString("exception_CommonPermissionPermissionCalculateInvalidOperationPermissionConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 查询权限的操作列表不能为空 的本地化字符串。
+        /// </summary>
+        internal static string exception_CommonPermissionServiceOperationsNull {
+            get {
+                return ResourceManager.GetString("exception_CommonPermissionServiceOperationsNull", resourceCulture);
             }
         }
         

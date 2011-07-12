@@ -123,11 +123,17 @@
   <data name="exception_AccessObjectRangeAccessNeedFalse" xml:space="preserve">
     <value>无效的访问对象,访问对象必须为非范围控制的访问对象</value>
   </data>
+  <data name="exception_CommonPermissionHavePermissionInvalidOperation" xml:space="preserve">
+    <value>查询权限的指定操作在权限对象中不存在该操作的权限信息</value>
+  </data>
   <data name="exception_CommonPermissionPermissionCalculateInvalidAccessObject" xml:space="preserve">
     <value>进行权限计算的权限配置对象的访问对象错误</value>
   </data>
   <data name="exception_CommonPermissionPermissionCalculateInvalidOperationPermissionConfig" xml:space="preserve">
     <value>进行权限计算的权限配置对象的访问对象的操作配置对象错误</value>
+  </data>
+  <data name="exception_CommonPermissionServiceOperationsNull" xml:space="preserve">
+    <value>查询权限的操作列表不能为空</value>
   </data>
   <data name="exception_InvalidInheritValue" xml:space="preserve">
     <value>无效的角色继承类型值</value>

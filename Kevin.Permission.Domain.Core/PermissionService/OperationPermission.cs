@@ -65,10 +65,8 @@ namespace Kevin.Permission.Domain.Core
 
         public OperationPermission(Operation operation)
         {
-            if (operation == null)
-            {
-                throw new ArgumentNullException("operation");
-            }
+            Guidance.ArgumentNotNull(operation, "operation");
+
             Operation = operation;
         }
 
@@ -82,10 +80,7 @@ namespace Kevin.Permission.Domain.Core
         /// <param name="operation">操作权限配置</param>
         public virtual void PermissionCalculate(OperationPermissionConfig operationConfig)
         {
-            if (operationConfig == null)
-            {
-                throw new ArgumentNullException("operationConfig");
-            }
+            Guidance.ArgumentNotNull(operationConfig, "operationConfig");
             if (operationConfig.Operation != Operation)
             {
                 throw new ArgumentException(

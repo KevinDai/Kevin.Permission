@@ -26,7 +26,7 @@ namespace Kevin.Permission.Domain.Core.Test
         }
 
         [TestMethod]
-        public void GetOperationConfig_Test()
+        public void PermissionConfigBase_GetOperationConfig_Test()
         {
             //初始化
             var role = new Role();
@@ -43,7 +43,7 @@ namespace Kevin.Permission.Domain.Core.Test
         }
 
         [TestMethod]
-        public void SetOperationPermission_Test()
+        public void PermissionConfigBase_SetOperationPermission_Test()
         {
             //初始化
             var role = new Role();
@@ -63,7 +63,7 @@ namespace Kevin.Permission.Domain.Core.Test
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void SetOperationPermission_Exception_When_InvlidOperation_Test()
+        public void PermissionConfigBase_SetOperationPermission_Exception_When_InvlidOperation_Test()
         {
             //初始化
             var role = new Role();

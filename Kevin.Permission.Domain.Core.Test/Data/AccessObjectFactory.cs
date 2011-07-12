@@ -15,7 +15,7 @@ namespace Kevin.Permission.Domain.Core.Test
             accessObject.Name = "TestAccessObject";
             accessObject.Code = "TestAccessObject";
 
-            foreach (var operation in CreateOperations())
+            foreach (var operation in OperationFactory.CreateOperations())
             {
                 accessObject.Operations.Add(operation);
             }
@@ -23,19 +23,5 @@ namespace Kevin.Permission.Domain.Core.Test
             return accessObject;
         }
 
-        public static IEnumerable<Operation> CreateOperations()
-        {
-            var list = new List<Operation>();
-            for (var i = 1; i < 4; i++)
-            {
-                list.Add(new Operation()
-                {
-                    Id = i,
-                    Name = "Operation" + i.ToString(),
-                    Code = "Operation" + i.ToString()
-                });
-            }
-            return list;
-        }
     }
 }

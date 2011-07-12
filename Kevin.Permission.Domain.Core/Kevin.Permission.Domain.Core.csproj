@@ -50,6 +50,7 @@
     <Compile Include="AccessObject\IOperationRepository.cs" />
     <Compile Include="AccessObject\Module.cs" />
     <Compile Include="AccessObject\Operation.cs" />
+    <Compile Include="Guidance.cs" />
     <Compile Include="PermissionService\CommonPermission.cs" />
     <Compile Include="PermissionService\CommonPermissionService.cs" />
     <Compile Include="PermissionService\ICommonPermissionService.cs" />

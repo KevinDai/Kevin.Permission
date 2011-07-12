@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Kevin.Permission.Domain.Core.PermissionService
+namespace Kevin.Permission.Domain.Core
 {
     /// <summary>
     /// 普通权限类
@@ -56,14 +56,8 @@ namespace Kevin.Permission.Domain.Core.PermissionService
 
         public CommonPermission(AccessObject accessObject, IEnumerable<CommonPermissionConfig> permissionConfigs)
         {
-            if (accessObject == null)
-            {
-                throw new ArgumentNullException("accessObject");
-            }
-            if (permissionConfigs == null)
-            {
-                throw new ArgumentNullException("permissionConfigs");
-            }
+            Guidance.ArgumentNotNull(accessObject, "accessObject");
+            Guidance.ArgumentNotNull(permissionConfigs, "permissionConfigs");
             if (accessObject.RangeAccess)
             {
                 throw new ArgumentException(
@@ -101,6 +95,7 @@ namespace Kevin.Permission.Domain.Core.PermissionService
         {
             foreach (var config in _permissionConfigs)
             {
+                PermissionCalculate(config, false);
             }
         }
 
@@ -108,12 +103,11 @@ namespace Kevin.Permission.Domain.Core.PermissionService
         /// 权限计算
         /// </summary>
         /// <param name="permissionConfig">权限配置</param>
-        public void PermissionCalculate(CommonPermissionConfig permissionConfig)
+        /// <param name="append">是否添加配置对象到配置对象列表</param>
+        private void PermissionCalculate(CommonPermissionConfig permissionConfig, bool append)
         {
-            if (permissionConfig == null)
-            {
-                throw new ArgumentNullException("permissionConfig");
-            }
+            Guidance.ArgumentNotNull(permissionConfig, "permissionConfig");
+
             if (permissionConfig.AccessObject != AccessObject)
             {
                 throw new ArgumentException(
@@ -121,6 +115,7 @@ namespace Kevin.Permission.Domain.Core.PermissionService
                     "permissionConfig");
             }
 
+            //根据权限配置对象更新操作的权限
             foreach (var operationPermissionConfig in permissionConfig.OperationPermissionConfigs)
             {
                 if (_operationPermissions.ContainsKey(operationPermissionConfig.Operation.Id))
@@ -134,8 +129,43 @@ namespace Kevin.Permission.Domain.Core.PermissionService
                         Resource.Messages.exception_CommonPermissionPermissionCalculateInvalidAccessObject);
                 }
             }
+
+            if (append)
+            {
+                //添加配置对象到配置对象列表
+                _permissionConfigs.Add(permissionConfig);
+            }
         }
 
+        /// <summary>
+        /// 权限计算
+        /// </summary>
+        /// <param name="permissionConfig">权限配置</param>
+        public void PermissionCalculate(CommonPermissionConfig permissionConfig)
+        {
+            PermissionCalculate(permissionConfig, true);
+        }
+
+        /// <summary>
+        /// 是否拥有指定操作的权限
+        /// </summary>
+        /// <param name="operation">操作</param>
+        /// <returns>是否拥有权限</returns>
+        public bool HavePermission(Operation operation)
+        {
+            Guidance.ArgumentNotNull(operation, "operation");
+
+            if (_operationPermissions.ContainsKey(operation.Id))
+            {
+                return _operationPermissions[operation.Id].HavePermission;
+            }
+            else
+            {
+                throw new ArgumentException(
+                    Resource.Messages.exception_CommonPermissionHavePermissionInvalidOperation,
+                    "operation");
+            }
+        }
 
         #endregion
 

@@ -30,14 +30,11 @@ namespace Kevin.Permission.Domain.Core
 
         public PermissionConfigBaseRolesSpecification(IEnumerable<int> roleIds)
         {
-            if (roleIds == null
-                ||
-                !roleIds.Any())
-            {
-                throw new ArgumentException(
-                    Resource.Messages.exception_PermissionConfigBaseRolesSpecification_InvalidRoleIds
-                    , "roleIds");
-            }
+            Guidance.IEnumerableNotNull(
+                roleIds,
+                "roleIds",
+                Resource.Messages.exception_PermissionConfigBaseRolesSpecification_InvalidRoleIds);
+
             RoleIds = roleIds;
         }
 

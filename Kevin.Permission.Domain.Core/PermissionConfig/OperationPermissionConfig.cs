@@ -58,7 +58,7 @@ namespace Kevin.Permission.Domain.Core
         {
         }
 
-        internal OperationPermissionConfig(PermissionConfigBase permissionConfig, Operation operation)
+        public OperationPermissionConfig(PermissionConfigBase permissionConfig, Operation operation)
         {
             PermissionConfig = permissionConfig;
             Operation = operation;

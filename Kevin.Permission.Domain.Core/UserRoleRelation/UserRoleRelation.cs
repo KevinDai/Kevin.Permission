@@ -33,14 +33,9 @@ namespace Kevin.Permission.Domain.Core
 
         public UserRoleRelation(User user, Role role)
         {
-            if (user == null)
-            {
-                throw new ArgumentNullException("user");
-            }
-            if (role == null)
-            {
-                throw new ArgumentNullException("role");
-            }
+            Guidance.ArgumentNotNull(user, "user");
+            Guidance.ArgumentNotNull(role, "role");
+
             User = user;
             Role = role;
         }

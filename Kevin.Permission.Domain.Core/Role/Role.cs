@@ -36,10 +36,8 @@ namespace Kevin.Permission.Domain.Core
 
         public Role(RoleCategory roleCategory)
         {
-            if (roleCategory == null)
-            {
-                throw new ArgumentNullException("roleCategory");
-            }
+            Guidance.ArgumentNotNull(roleCategory, "roleCategory");
+
             Category = Category;
         }
 

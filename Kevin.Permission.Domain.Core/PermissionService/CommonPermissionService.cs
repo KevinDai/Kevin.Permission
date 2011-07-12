@@ -68,6 +68,12 @@ namespace Kevin.Permission.Domain.Core
             return roles;
         }
 
+        /// <summary>
+        /// 根据角色列表以及访问对象查询相关的权限配置对象
+        /// </summary>
+        /// <param name="roles">角色列表</param>
+        /// <param name="accessObject">访问对象</param>
+        /// <returns>权限配置对象列表</returns>
         protected IEnumerable<CommonPermissionConfig> GetPermissionConfigs(IEnumerable<Role> roles, AccessObject accessObject)
         {
             //根据角色列表以及访问对象查询相关的权限配置对象
@@ -77,6 +83,43 @@ namespace Kevin.Permission.Domain.Core
 
             var configs = CommonPermissionConfigRepository.FindBy(spec);
             return configs;
+        }
+
+        /// <summary>
+        /// 获取用户对访问对象的权限
+        /// </summary>
+        /// <param name="user">用户</param>
+        /// <param name="accessObject">访问对象</param>
+        /// <returns>权限</returns>
+        private CommonPermission GetCommonPermission(User user, AccessObject accessObject)
+        {
+            CommonPermission result = new CommonPermission(accessObject);
+            //查询用户关联的角色列表
+            var roles = GetRolesOfUserWithInheritRoles(user);
+            if (roles.Any())
+            {
+                //查询权限配置对象列表
+                var configs = GetPermissionConfigs(roles, accessObject);
+                if (configs.Any())
+                {
+                    result = new CommonPermission(accessObject, configs);
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 访问对象验证
+        /// </summary>
+        /// <param name="accessObject">访问对象</param>
+        private void AccessObjectArgumentValid(AccessObject accessObject, string argName)
+        {
+            if (accessObject.RangeAccess)
+            {
+                throw new ArgumentException(
+                    Resource.Messages.exception_AccessObjectRangeAccessNeedFalse,
+                    argName);
+            }
         }
 
         #endregion
@@ -92,40 +135,14 @@ namespace Kevin.Permission.Domain.Core
         /// <returns><see cref="Kevin.Permission.Domain.Core.ICommonPermissionService.HavePermission"/></returns>
         public bool HavePermission(User user, AccessObject accessObject, Operation operation)
         {
-            if (user == null)
-            {
-                throw new ArgumentNullException("user");
-            }
-            if (accessObject == null)
-            {
-                throw new ArgumentNullException("accessObject");
-            }
-            if (operation == null)
-            {
-                throw new ArgumentNullException("operation");
-            }
-            if (accessObject.RangeAccess)
-            {
-                throw new ArgumentException(
-                    Resource.Messages.exception_AccessObjectRangeAccessNeedFalse,
-                    "accessObject");
-            }
-            if (!accessObject.Operations.Contains(operation))
-            {
-                throw new ArgumentException(
-                    Resource.Messages.exception_AccessObjectNotContainsOperation,
-                    "operation");
-            }
+            Guidance.ArgumentNotNull(user, "user");
+            Guidance.ArgumentNotNull(accessObject, "accessObject");
+            Guidance.ArgumentNotNull(operation, "operation");
+            AccessObjectArgumentValid(accessObject, "accessObject");
 
-            bool result = false;
-            //查询用户关联的角色列表
-            var roles = GetRolesOfUserWithInheritRoles(user);
-            if (roles.Any())
-            {
-                var configs = GetPermissionConfigs(roles, accessObject);
-            }
-
-            return result;
+            //获取权限
+            var commonPermission = GetCommonPermission(user, accessObject);
+            return commonPermission.HavePermission(operation);
         }
 
         /// <summary>
@@ -133,11 +150,33 @@ namespace Kevin.Permission.Domain.Core
         /// </summary>
         /// <param name="user"><see cref="Kevin.Permission.Domain.Core.ICommonPermissionService.HaveAllPermission"/></param>
         /// <param name="accessObject"><see cref="Kevin.Permission.Domain.Core.ICommonPermissionService.HaveAllPermission"/></param>
-        /// <param name="operation"><see cref="Kevin.Permission.Domain.Core.ICommonPermissionService.HaveAllPermission"/></param>
+        /// <param name="operations"><see cref="Kevin.Permission.Domain.Core.ICommonPermissionService.HaveAllPermission"/></param>
         /// <returns><see cref="Kevin.Permission.Domain.Core.ICommonPermissionService.HaveAllPermission"/></returns>
-        public bool HaveAllPermission(User user, AccessObject accessObject, IEnumerable<Operation> operation)
+        public bool HaveAllPermission(User user, AccessObject accessObject, IEnumerable<Operation> operations)
         {
-            throw new NotImplementedException();
+            Guidance.ArgumentNotNull(user, "user");
+            Guidance.ArgumentNotNull(accessObject, "accessObject");
+            Guidance.IEnumerableNotNull(
+                operations,
+                "operations",
+                Resource.Messages.exception_CommonPermissionServiceOperationsNull);
+            AccessObjectArgumentValid(accessObject, "accessObject");
+
+            var commonPermission = GetCommonPermission(user, accessObject);
+            bool? result = null;
+            foreach (var operation in operations)
+            {
+                result = result.HasValue
+                    ?
+                    commonPermission.HavePermission(operation) && result.Value
+                    :
+                    commonPermission.HavePermission(operation);
+            }
+            return result.HasValue
+                ?
+                result.Value
+                :
+                false;
         }
 
         /// <summary>
@@ -145,11 +184,25 @@ namespace Kevin.Permission.Domain.Core
         /// </summary>
         /// <param name="user"><see cref="Kevin.Permission.Domain.Core.ICommonPermissionService.HaveAnyPermission"/></param>
         /// <param name="accessObject"><see cref="Kevin.Permission.Domain.Core.ICommonPermissionService.HaveAnyPermission"/></param>
-        /// <param name="operation"><see cref="Kevin.Permission.Domain.Core.ICommonPermissionService.HaveAnyPermission"/></param>
+        /// <param name="operations"><see cref="Kevin.Permission.Domain.Core.ICommonPermissionService.HaveAnyPermission"/></param>
         /// <returns><see cref="Kevin.Permission.Domain.Core.ICommonPermissionService.HaveAnyPermission"/></returns>
-        public bool HaveAnyPermission(User user, AccessObject accessObject, IEnumerable<Operation> operation)
+        public bool HaveAnyPermission(User user, AccessObject accessObject, IEnumerable<Operation> operations)
         {
-            throw new NotImplementedException();
+            Guidance.ArgumentNotNull(user, "user");
+            Guidance.ArgumentNotNull(accessObject, "accessObject");
+            Guidance.IEnumerableNotNull(
+                operations,
+                "operations",
+                Resource.Messages.exception_CommonPermissionServiceOperationsNull);
+            AccessObjectArgumentValid(accessObject, "accessObject");
+
+            var commonPermission = GetCommonPermission(user, accessObject);
+            bool result = false;
+            foreach (var operation in operations)
+            {
+                result = result || commonPermission.HavePermission(operation);
+            }
+            return result;
         }
 
         #endregion

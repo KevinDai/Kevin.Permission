@@ -71,10 +71,8 @@ namespace Kevin.Permission.Domain.Core
         public AccessObject(Module module, bool rangeAcess)
             : this()
         {
-            if (module == null)
-            {
-                throw new ArgumentNullException("module");
-            }
+            Guidance.ArgumentNotNull(module, "module");
+
             Module = module;
             RangeAccess = rangeAcess;
         }
@@ -91,6 +89,16 @@ namespace Kevin.Permission.Domain.Core
         public bool Contains(Operation operation)
         {
             return Operations.Any(o => o.Id == operation.Id);
+        }
+
+        /// <summary>
+        /// 获取访问对象中的指定操作
+        /// </summary>
+        /// <param name="operationId">操作标识符</param>
+        /// <returns>操作</returns>
+        public Operation GetOperation(int operationId)
+        {
+            return Operations.FirstOrDefault(o => o.Id == operationId);
         }
 
         #endregion

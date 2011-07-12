@@ -52,14 +52,8 @@ namespace Kevin.Permission.Domain.Core
 
         public PermissionConfigBase(Role role, AccessObject accessObject)
         {
-            if (role == null)
-            {
-                throw new ArgumentNullException("role");
-            }
-            if (accessObject == null)
-            {
-                throw new ArgumentNullException("accessObject");
-            }
+            Guidance.ArgumentNotNull(role, "role");
+            Guidance.ArgumentNotNull(accessObject, "accessObject");
 
             Role = role;
             AccessObject = accessObject;
