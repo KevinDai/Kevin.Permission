@@ -106,7 +106,7 @@ namespace Kevin.Permission.Domain.Core
         #region EntityBase<int> override
 
         /// <summary>
-        /// <see cref="Kevin.Infrastructure.Domain.Validate"/>
+        /// <see cref="Kevin.Infrastructure.Domain"/>
         /// </summary>
         protected override void Validate()
         {

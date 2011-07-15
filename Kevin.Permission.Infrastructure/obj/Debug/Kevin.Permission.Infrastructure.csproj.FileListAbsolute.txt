@@ -1,0 +1,5 @@
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\bin\Debug\Kevin.Permission.Infrastructure.dll
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\bin\Debug\Kevin.Permission.Infrastructure.pdb
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\obj\Debug\ResolveAssemblyReference.cache
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\obj\Debug\Kevin.Permission.Infrastructure.dll
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\obj\Debug\Kevin.Permission.Infrastructure.pdb

@@ -32,5 +32,19 @@ namespace Kevin.Permission.Domain.Core.Test
             //验证
             Assert.IsFalse(operationPermission.HavePermission);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void PermissionCalculate_PermissionCalculate_InvlidOperationPermissionConfig_Test()
+        {
+            //初始化
+            var operation = OperationFactory.CreateOperation(1);
+            var operationPermissionConfig = new OperationPermissionConfig(new CommonPermissionConfig(), new Operation());
+
+            var operationPermission = new OperationPermission(operation);
+
+            //操作,设置允许权限
+            operationPermission.PermissionCalculate(operationPermissionConfig);
+        }
     }
 }

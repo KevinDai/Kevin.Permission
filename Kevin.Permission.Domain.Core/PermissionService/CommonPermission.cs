@@ -89,7 +89,7 @@ namespace Kevin.Permission.Domain.Core
         }
 
         /// <summary>
-        /// 权限计算
+        /// 根据权限配置进行计算权限
         /// </summary>
         private void PermissionCalculate()
         {
@@ -100,7 +100,7 @@ namespace Kevin.Permission.Domain.Core
         }
 
         /// <summary>
-        /// 权限计算
+        /// 根据权限配置进行计算权限
         /// </summary>
         /// <param name="permissionConfig">权限配置</param>
         /// <param name="append">是否添加配置对象到配置对象列表</param>
@@ -138,7 +138,7 @@ namespace Kevin.Permission.Domain.Core
         }
 
         /// <summary>
-        /// 权限计算
+        /// 根据权限配置进行计算权限
         /// </summary>
         /// <param name="permissionConfig">权限配置</param>
         public void PermissionCalculate(CommonPermissionConfig permissionConfig)
@@ -155,14 +155,26 @@ namespace Kevin.Permission.Domain.Core
         {
             Guidance.ArgumentNotNull(operation, "operation");
 
+            return GetOperationPermission(operation).HavePermission;
+        }
+
+        /// <summary>
+        /// 查询指定操作的操作权限
+        /// </summary>
+        /// <param name="operation">操作</param>
+        /// <returns>操作权限</returns>
+        public OperationPermission GetOperationPermission(Operation operation)
+        {
+            Guidance.ArgumentNotNull(operation, "operation");
+
             if (_operationPermissions.ContainsKey(operation.Id))
             {
-                return _operationPermissions[operation.Id].HavePermission;
+                return _operationPermissions[operation.Id];
             }
             else
             {
                 throw new ArgumentException(
-                    Resource.Messages.exception_CommonPermissionHavePermissionInvalidOperation,
+                    Resource.Messages.exception_CommonPermissionNotContainsOperation,
                     "operation");
             }
         }

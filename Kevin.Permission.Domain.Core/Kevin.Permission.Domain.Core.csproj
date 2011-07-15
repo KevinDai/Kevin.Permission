@@ -50,7 +50,6 @@
     <Compile Include="AccessObject\IOperationRepository.cs" />
     <Compile Include="AccessObject\Module.cs" />
     <Compile Include="AccessObject\Operation.cs" />
-    <Compile Include="Guidance.cs" />
     <Compile Include="PermissionService\CommonPermission.cs" />
     <Compile Include="PermissionService\CommonPermissionService.cs" />
     <Compile Include="PermissionService\ICommonPermissionService.cs" />
@@ -91,6 +90,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kevin.Permission.Infrastructure\Kevin.Permission.Infrastructure.csproj">
+      <Project>{4B94EA9C-A46C-4729-A0DD-674627CFDB12}</Project>
+      <Name>Kevin.Permission.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

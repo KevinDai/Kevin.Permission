@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Kevin.Infrastructure.Domain.EntityFramework</name>
+    </assembly>
+    <members>
+        <member name="T:Kevin.Infrastructure.Domain.EntityFramework.Repository`2">
+            <summary>
+            使用EntityFramework的实体数据仓库基类
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <typeparam name="TId">实体标识符类型</typeparam>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.EntityFramework.Repository`2.Get(`1)">
+            <summary>
+            <see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/>
+            </summary>
+            <param name="id"><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></param>
+            <returns><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.EntityFramework.Repository`2.Add(`0)">
+            <summary>
+            <see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/>
+            </summary>
+            <param name="entity"><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></param>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.EntityFramework.Repository`2.Update(`0)">
+            <summary>
+            <see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/>
+            </summary>
+            <param name="entity"><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></param>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.EntityFramework.Repository`2.Remove(`0)">
+            <summary>
+            <see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/>
+            </summary>
+            <param name="entity"><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></param>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.EntityFramework.Repository`2.FindAll(Kevin.Infrastructure.Domain.SortDescriptor{`0}[])">
+            <summary>
+            <see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/>
+            </summary>
+            <returns><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.EntityFramework.Repository`2.FindBy(Kevin.Infrastructure.Domain.Specification.ISpecification{`0},Kevin.Infrastructure.Domain.SortDescriptor{`0}[])">
+            <summary>
+            <see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/>
+            </summary>
+            <param name="specification"><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></param>
+            <param name="sortDescriptors"><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></param>
+            <returns><see cref="M:Kevin.Infrastructure.Domain.IRepository`2.FindBy(Kevin.Infrastructure.Domain.Specification.ISpecification{`0},Kevin.Infrastructure.Domain.SortDescriptor{`0}[])"/></returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.EntityFramework.Repository`2.FindPageBy(Kevin.Infrastructure.Domain.Specification.ISpecification{`0},System.Int32,System.Int32,Kevin.Infrastructure.Domain.SortDescriptor{`0}[])">
+            <summary>
+            <see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/>
+            </summary>
+            <param name="specification"><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></param>
+            <param name="pageIndex"><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></param>
+            <param name="pageCount"><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></param>
+            <param name="sortDescriptors"><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></param>
+            <returns><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.EntityFramework.Repository`2.FindPageBy(Kevin.Infrastructure.Domain.Specification.ISpecification{`0},System.Int32,System.Int32,System.Int32@,Kevin.Infrastructure.Domain.SortDescriptor{`0}[])">
+            <summary>
+            <see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/>
+            </summary>
+            <param name="specification"><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></param>
+            <param name="pageIndex"><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></param>
+            <param name="pageCount"><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></param>
+            <param name="totalCount"><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></param>
+            <param name="sortDescriptors"><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></param>
+            <returns><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.EntityFramework.Repository`2.Query(System.Data.Entity.Infrastructure.DbQuery{`0})">
+            <summary>
+            在执行查询前对数据源的操作
+            </summary>
+            <param name="query">数据源</param>
+            <returns>数据源</returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.EntityFramework.Repository`2.CreateIdEqualExpression(`1)">
+            <summary>
+            构造根据标识符查询时的Lambda表达式
+            </summary>
+            <param name="id">标识符</param>
+            <returns>Lamabda表达式</returns>
+        </member>
+        <member name="P:Kevin.Infrastructure.Domain.EntityFramework.Repository`2.Paths">
+            <summary>
+            在执行查询时，默认加载的关联属性的名称的集合，参考Entity的Include机制
+            </summary>
+        </member>
+        <member name="T:Kevin.Infrastructure.Domain.EntityFramework.Resources.Messages">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:Kevin.Infrastructure.Domain.EntityFramework.Resources.Messages.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:Kevin.Infrastructure.Domain.EntityFramework.Resources.Messages.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:Kevin.Infrastructure.Domain.EntityFramework.Resources.Messages.exception_PageCountShouldGreaterThanZero">
+            <summary>
+              查找类似 分页的每页记录大小必须大于0 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:Kevin.Infrastructure.Domain.EntityFramework.Resources.Messages.exception_PageIndexShouldGreaterThanZero">
+            <summary>
+              查找类似 分页当前页码必须大于0 的本地化字符串。
+            </summary>
+        </member>
+    </members>
+</doc>

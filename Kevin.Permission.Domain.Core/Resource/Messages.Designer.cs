@@ -81,9 +81,9 @@ namespace Kevin.Permission.Domain.Core.Resource {
         /// <summary>
         ///   查找类似 查询权限的指定操作在权限对象中不存在该操作的权限信息 的本地化字符串。
         /// </summary>
-        internal static string exception_CommonPermissionHavePermissionInvalidOperation {
+        internal static string exception_CommonPermissionNotContainsOperation {
             get {
-                return ResourceManager.GetString("exception_CommonPermissionHavePermissionInvalidOperation", resourceCulture);
+                return ResourceManager.GetString("exception_CommonPermissionNotContainsOperation", resourceCulture);
             }
         }
         

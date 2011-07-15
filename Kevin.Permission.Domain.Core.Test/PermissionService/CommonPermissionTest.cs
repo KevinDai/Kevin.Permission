@@ -9,7 +9,6 @@ namespace Kevin.Permission.Domain.Core.Test
     [TestClass]
     public class CommonPermissionTest
     {
-
         [TestMethod]
         public void CommonPermission_Constructor_With_PermissionConfigs_Test()
         {
@@ -29,6 +28,42 @@ namespace Kevin.Permission.Domain.Core.Test
             Assert.AreEqual(accessObject.Operations.Count(), commonPermission.OperationPermissions.Count());
             Assert.AreSame(config, commonPermission.PermissionConfigs.First());
             Assert.IsTrue(commonPermission.HavePermission(operation));
+            Assert.IsFalse(commonPermission.HavePermission(
+                accessObject.Operations.First(o => o != operation)));
+        }
+
+        [TestMethod]
+        public void CommonPermission_GetOperationPermission_Test()
+        {
+            //初始化
+            Role role = new Role();
+            AccessObject accessObject = AccessObjectFactory.CreateAcessObject(1, false);
+            CommonPermissionConfig config = new CommonPermissionConfig(role, accessObject);
+            var operation = accessObject.Operations.First();
+
+            CommonPermission commonPermission = new CommonPermission(accessObject);
+
+            //操作
+            OperationPermission operationPermission = commonPermission.GetOperationPermission(operation);
+
+            //验证
+            Assert.IsNotNull(operationPermission);
+            Assert.AreSame(operation, operationPermission.Operation);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CommonPermission_GetOperationPermission_InvlidOperation_Test()
+        {
+            //初始化
+            Role role = new Role();
+            AccessObject accessObject = AccessObjectFactory.CreateAcessObject(1, false);
+            CommonPermissionConfig config = new CommonPermissionConfig(role, accessObject);
+
+            CommonPermission commonPermission = new CommonPermission(accessObject);
+
+            //操作
+            OperationPermission operationPermission = commonPermission.GetOperationPermission(new Operation());
         }
 
         [TestMethod]
@@ -49,6 +84,26 @@ namespace Kevin.Permission.Domain.Core.Test
             //验证
             Assert.AreSame(config, commonPermission.PermissionConfigs.First());
             Assert.IsTrue(commonPermission.HavePermission(operation));
+            Assert.IsFalse(commonPermission.HavePermission(
+                accessObject.Operations.First(o => o != operation)));
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CommonPermission_PermissionCalculate_InvalidConfigAccessObject_Test()
+        {
+            //初始化
+            Role role = new Role();
+            AccessObject accessObject = AccessObjectFactory.CreateAcessObject(1, false);
+            CommonPermissionConfig config = new CommonPermissionConfig(role, accessObject);
+            var operation = accessObject.Operations.First();
+            config.SetOperationPermission(operation, true, false);
+
+            CommonPermission commonPermission = new CommonPermission(accessObject);
+
+            //操作
+            commonPermission.PermissionCalculate(new CommonPermissionConfig());
+        }
+
     }
 }

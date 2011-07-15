@@ -1,0 +1,14 @@
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\obj\Debug\ResolveAssemblyReference.cache
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\bin\Debug\Kevin.Permission.Domain.Entity.dll.config
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\bin\Debug\Kevin.Permission.Domain.Entity.dll
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\bin\Debug\Kevin.Permission.Domain.Entity.pdb
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\bin\Debug\Kevin.Infrastructure.Domain.dll
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\bin\Debug\Kevin.Infrastructure.Domain.EntityFramework.dll
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\bin\Debug\Kevin.Permission.Domain.Core.dll
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\bin\Debug\Kevin.Permission.Domain.Core.pdb
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\obj\Debug\Kevin.Permission.Domain.Entity.dll
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\obj\Debug\Kevin.Permission.Domain.Entity.pdb
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\bin\Debug\Kevin.Infrastructure.Domain.pdb
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\bin\Debug\Kevin.Infrastructure.Domain.xml
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\bin\Debug\Kevin.Infrastructure.Domain.EntityFramework.pdb
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\bin\Debug\Kevin.Infrastructure.Domain.EntityFramework.xml

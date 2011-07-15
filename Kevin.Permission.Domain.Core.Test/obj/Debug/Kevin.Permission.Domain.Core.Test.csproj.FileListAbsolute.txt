@@ -9,3 +9,7 @@ E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core.Test\obj\Debu
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core.Test\bin\Debug\Moq.dll
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core.Test\bin\Debug\Moq.pdb
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core.Test\bin\Debug\Moq.xml
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core.Test\bin\Debug\Kevin.Infrastructure.Domain.pdb
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core.Test\bin\Debug\Kevin.Infrastructure.Domain.xml
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core.Test\bin\Debug\Kevin.Permission.Infrastructure.dll
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Core.Test\bin\Debug\Kevin.Permission.Infrastructure.pdb
