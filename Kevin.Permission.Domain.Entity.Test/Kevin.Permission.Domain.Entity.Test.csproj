@@ -56,6 +56,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EntityUnitOfWorkFactory.cs" />
+    <Compile Include="RoleInheritRelation\RoleInheritRelationServiceTest.cs" />
+    <Compile Include="Role\RoleRepositoryTest.cs" />
+    <Compile Include="UserRoleRelation\UserRoleRelationServiceTest.cs" />
     <Compile Include="User\UserRepositoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +74,7 @@
       <Name>Kevin.Permission.Domain.Entity</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

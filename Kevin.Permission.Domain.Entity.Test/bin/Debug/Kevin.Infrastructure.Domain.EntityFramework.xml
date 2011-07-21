@@ -71,13 +71,6 @@
             <param name="sortDescriptors"><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></param>
             <returns><see cref="T:Kevin.Infrastructure.Domain.IRepository`2"/></returns>
         </member>
-        <member name="M:Kevin.Infrastructure.Domain.EntityFramework.Repository`2.Query(System.Data.Entity.Infrastructure.DbQuery{`0})">
-            <summary>
-            在执行查询前对数据源的操作
-            </summary>
-            <param name="query">数据源</param>
-            <returns>数据源</returns>
-        </member>
         <member name="M:Kevin.Infrastructure.Domain.EntityFramework.Repository`2.CreateIdEqualExpression(`1)">
             <summary>
             构造根据标识符查询时的Lambda表达式
@@ -85,9 +78,9 @@
             <param name="id">标识符</param>
             <returns>Lamabda表达式</returns>
         </member>
-        <member name="P:Kevin.Infrastructure.Domain.EntityFramework.Repository`2.Paths">
+        <member name="P:Kevin.Infrastructure.Domain.EntityFramework.Repository`2.Query">
             <summary>
-            在执行查询时，默认加载的关联属性的名称的集合，参考Entity的Include机制
+            进行查询的实体数据源
             </summary>
         </member>
         <member name="T:Kevin.Infrastructure.Domain.EntityFramework.Resources.Messages">
@@ -104,6 +97,11 @@
             <summary>
               使用此强类型资源类，为所有资源查找
               重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:Kevin.Infrastructure.Domain.EntityFramework.Resources.Messages.exception_IncludeInvlidDataSource">
+            <summary>
+              查找类似 进行属性加载的数据无效 的本地化字符串。
             </summary>
         </member>
         <member name="P:Kevin.Infrastructure.Domain.EntityFramework.Resources.Messages.exception_PageCountShouldGreaterThanZero">

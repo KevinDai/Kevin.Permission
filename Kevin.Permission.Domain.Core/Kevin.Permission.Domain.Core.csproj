@@ -67,14 +67,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Messages.resx</DependentUpon>
     </Compile>
+    <Compile Include="RoleInheritRelation\IRoleInheritRelationService.cs" />
     <Compile Include="Role\RoleCategorySpecifaction.cs" />
     <Compile Include="Role\RoleInheritType.cs" />
     <Compile Include="Role\IRoleCategoryRepository.cs" />
     <Compile Include="Role\IRoleRepository.cs" />
     <Compile Include="Role\Role.cs" />
     <Compile Include="Role\RoleCategory.cs" />
-    <Compile Include="UserRoleRelation\IUserRoleRelationRepository.cs" />
-    <Compile Include="UserRoleRelation\UserRoleRelation.cs" />
+    <Compile Include="UserRoleRelation\IUserRoleRelationService.cs" />
     <Compile Include="User\IUserRepository.cs" />
     <Compile Include="User\User.cs" />
   </ItemGroup>
@@ -82,7 +82,6 @@
     <None Include="AccessObject\_AccessObject.cd" />
     <None Include="PermissionConfig\_PermissionConfig.cd" />
     <None Include="Role\_Role.cd" />
-    <None Include="UserRoleRelation\_UserRoleRelation.cd" />
     <None Include="User\_User.cd" />
   </ItemGroup>
   <ItemGroup>

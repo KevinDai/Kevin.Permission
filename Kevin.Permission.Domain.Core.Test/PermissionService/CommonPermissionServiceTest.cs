@@ -69,10 +69,12 @@ namespace Kevin.Permission.Domain.Core.Test
             var pcbAccessObjectSpec = new PermissionConfigBaseAccessObjectSpecification(config.AccessObject.Id);
             ISpecification<CommonPermissionConfig> spec = (pcbRolesSpec & pcbRolesSpec).OfType<CommonPermissionConfig>();
 
-            //角色数据仓库接口Mock对象
-            var mockRoleRepository = new Mock<IRoleRepository>();
-            mockRoleRepository.Setup(m => m.GetRolesOfUser(user)).Returns(roles);
-            mockRoleRepository.Setup(m => m.GetInheritRolesOfRoles(roles)).Returns(roles);
+            var mockUserRoleRelationService = new Mock<IUserRoleRelationService>();
+            mockUserRoleRelationService.Setup(m => m.GetRolesOfUser(user)).Returns(roles);
+
+            var mockRoleInheritRelationService = new Mock<IRoleInheritRelationService>();
+            mockRoleInheritRelationService.Setup(m => m.GetInheritRolesOfRoles(roles)).Returns(new Role[] { });
+
             //权限配置数据仓库接口Mock对象
             var mockCommonPermissionConfigRepository = new Mock<ICommonPermissionConfigRepository>();
             mockCommonPermissionConfigRepository
@@ -83,7 +85,8 @@ namespace Kevin.Permission.Domain.Core.Test
 
 
             ICommonPermissionService service = new CommonPermissionService(
-                mockRoleRepository.Object,
+                mockUserRoleRelationService.Object,
+                mockRoleInheritRelationService.Object,
                 mockCommonPermissionConfigRepository.Object);
 
             return service;

@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Kevin.Infrastructure.Domain.EntityFramework;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity;
 
 namespace Kevin.Permission.Domain.Entity
 {
     using Kevin.Permission.Domain.Core;
 
+    /// <summary>
+    /// 角色数据仓库类
+    /// </summary>
     public class RoleRepository : Repository<Role, int>, IRoleRepository
     {
 
@@ -22,11 +27,15 @@ namespace Kevin.Permission.Domain.Entity
 
         #region Repository override
 
-        protected override IEnumerable<string> Paths
+        /// <summary>
+        /// <see cref="Repository{Role, int}"/>
+        /// </summary>
+        protected override IQueryable<Role> Query
         {
             get
             {
-                return new string[] { "Category" };
+                var query = base.Query.Include(r => r.Category);
+                return query;
             }
         }
 
@@ -34,36 +43,8 @@ namespace Kevin.Permission.Domain.Entity
 
         #region IRoleRepository implementation
 
-        public IEnumerable<Role> GetRolesOfUser(User user)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AddInheritRoleOfRole(Role role, Role inheritRole)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveInheritRoleOfRole(Role role, Role inheritRole)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Role> GetInheritRolesOfRole(Role role, bool cascade)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Role> GetDeriveRolesOfRole(Role role, bool cascade)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Role> GetInheritRolesOfRoles(IEnumerable<Role> roles)
-        {
-            throw new NotImplementedException();
-        }
 
         #endregion
     }
+
 }

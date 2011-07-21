@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using Kevin.Infrastructure.Domain;
 
-namespace Kevin.Permission.Domain.Core
+namespace Kevin.Permission.Domain.Entity
 {
+    using Kevin.Permission.Domain.Core;
+
     /// <summary>
-    /// 用户角色的关联信息类
+    /// 用户角色的关联类
     /// </summary>
-    public class UserRoleRelation : EntityBase<int>, IAggregateRoot
+    internal class UserRoleRelation : EntityBase<int>, IAggregateRoot
     {
 
         #region Members

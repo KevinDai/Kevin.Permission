@@ -7,7 +7,6 @@ namespace Kevin.Permission.Domain.Core
 {
     public enum RoleInheritType
     {
-        None,
         NotInherit,
         SingleInherit,
         ManyInherit

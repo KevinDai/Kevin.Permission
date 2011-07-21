@@ -25,11 +25,20 @@ namespace Kevin.Permission.Domain.Core
         /// <summary>
         /// 角色类型的名称
         /// </summary>
-        public string Name { get; set; }
+        public string Name
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// 角色类型的编码
         /// </summary>
-        public string Code { get; set; }
+        public string Code
+        {
+            get;
+            set;
+        }
 
         #endregion
 
@@ -41,10 +50,6 @@ namespace Kevin.Permission.Domain.Core
 
         public RoleCategory(RoleInheritType inheritType)
         {
-            if (inheritType == RoleInheritType.None)
-            {
-                throw new ArgumentException(Resource.Messages.exception_InvalidInheritValue);
-            }
             InheritType = (int)inheritType;
         }
 
@@ -57,9 +62,7 @@ namespace Kevin.Permission.Domain.Core
         /// </summary>
         protected override void Validate()
         {
-            if (Enum.IsDefined(typeof(RoleInheritType), InheritType) 
-                || 
-                InheritType == (int)RoleInheritType.None)
+            if (Enum.IsDefined(typeof(RoleInheritType), InheritType))
             {
                 AddBrokenRule(new BusinessRule("InheritType", "必须设置有效的角色继承类型"));
             }

@@ -40,8 +40,12 @@ namespace Kevin.Permission.Domain.Core
 
         #endregion
 
-        #region Specification<Role> implementation
+        #region Specification<PermissionConfigBase> implementation
 
+        /// <summary>
+        /// <see cref="Specification{PermissionConfigBase}"/>
+        /// </summary>
+        /// <returns><see cref="Specification{PermissionConfigBase}"/></returns>
         public override Expression<Func<PermissionConfigBase, bool>> SatisfiedBy()
         {
             return p => RoleIds.Contains(p.Role.Id);

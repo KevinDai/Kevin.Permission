@@ -78,14 +78,9 @@
             <param name="id">标识符</param>
             <returns>Lamabda表达式</returns>
         </member>
-        <member name="P:Kevin.Infrastructure.Domain.EntityFramework.Repository`2.IncludeProperty">
-            <summary>
-            默认加载的关联属性的名称的集合，参考Entity的Include机制
-            </summary>
-        </member>
         <member name="P:Kevin.Infrastructure.Domain.EntityFramework.Repository`2.Query">
             <summary>
-            持久化的实体集合数据源
+            进行查询的实体数据源
             </summary>
         </member>
         <member name="T:Kevin.Infrastructure.Domain.EntityFramework.Resources.Messages">
@@ -102,6 +97,11 @@
             <summary>
               使用此强类型资源类，为所有资源查找
               重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:Kevin.Infrastructure.Domain.EntityFramework.Resources.Messages.exception_IncludeInvlidDataSource">
+            <summary>
+              查找类似 进行属性加载的数据无效 的本地化字符串。
             </summary>
         </member>
         <member name="P:Kevin.Infrastructure.Domain.EntityFramework.Resources.Messages.exception_PageCountShouldGreaterThanZero">

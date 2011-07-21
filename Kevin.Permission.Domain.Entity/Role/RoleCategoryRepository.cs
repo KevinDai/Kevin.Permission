@@ -8,6 +8,9 @@ namespace Kevin.Permission.Domain.Entity
 {
     using Kevin.Permission.Domain.Core;
 
+    /// <summary>
+    /// 角色类型数据仓库类
+    /// </summary>
     public class RoleCategoryRepository
         : Repository<RoleCategory, int>, IRoleCategoryRepository
     {

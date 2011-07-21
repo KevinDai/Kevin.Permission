@@ -37,6 +37,10 @@ namespace Kevin.Permission.Domain.Core
 
         #region Specification<Role> implementation
 
+        /// <summary>
+        /// <see cref="Specification{Role}"/>
+        /// </summary>
+        /// <returns><see cref="Specification{Role}"/></returns>
         public override Expression<Func<Role, bool>> SatisfiedBy()
         {
             return r => r.Category.Id == RoleCategoryId;

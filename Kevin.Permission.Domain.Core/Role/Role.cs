@@ -16,15 +16,27 @@ namespace Kevin.Permission.Domain.Core
         /// <summary>
         /// 角色类型
         /// </summary>
-        public RoleCategory Category { get; private set; }
+        public RoleCategory Category
+        {
+            get;
+            private set;
+        }
         /// <summary>
         /// 角色名称
         /// </summary>
-        public string Name { get; set; }
+        public string Name
+        {
+            get;
+            set;
+        }
         /// <summary>
         /// 角色编码
         /// </summary>
-        public string Code { get; set; }
+        public string Code
+        {
+            get;
+            set;
+        }
 
         #endregion
 
@@ -53,6 +65,10 @@ namespace Kevin.Permission.Domain.Core
             if (string.IsNullOrEmpty(Name))
             {
                 AddBrokenRule(new BusinessRule("Name", "必须输入角色名称"));
+            }
+            if (Category == null)
+            {
+                AddBrokenRule(new BusinessRule("Category", "无效的角色类型对象"));
             }
         }
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Entity.ModelConfiguration;
 
-namespace Kevin.Permission.Domain.Entity.Map
+namespace Kevin.Permission.Domain.Entity.Mapping
 {
     using Kevin.Permission.Domain.Core;
 

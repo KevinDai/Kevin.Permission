@@ -25,23 +25,6 @@ namespace Kevin.Permission.Domain.Entity
 
         #region IUserRepository implementation
 
-        /// <summary>
-        /// <see cref="IUserRepository"/>
-        /// </summary>
-        /// <param name="role"><see cref="IUserRepository"/></param>
-        /// <returns><see cref="IUserRepository"/></returns>
-        public IEnumerable<User> GetUsersOfRole(Role role)
-        {
-            Guidance.ArgumentNotNull(role, "role");
-
-            var userRoleRelationQuery = this.UnitOfWork.DbSet<UserRoleRelation, int>();
-            var users = userRoleRelationQuery
-                .Where(urr => urr.Role.Id == role.Id)
-                .Select(urr => urr.User);
-
-            return users;
-        }
-
         #endregion
 
     }

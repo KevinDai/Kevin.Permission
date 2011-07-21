@@ -37,6 +37,10 @@ namespace Kevin.Permission.Domain.Core
 
         #region Specification<PermisssionConfigBase> implementation
 
+        /// <summary>
+        /// <see cref="Specification{PermissionConfigBase}"/>
+        /// </summary>
+        /// <returns><see cref="Specification{PermissionConfigBase}"/></returns>
         public override Expression<Func<PermissionConfigBase, bool>> SatisfiedBy()
         {
             return p => p.AccessObject.Id == AccessObjectId;

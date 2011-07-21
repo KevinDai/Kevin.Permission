@@ -34,8 +34,12 @@ namespace Kevin.Permission.Domain.Core
 
         #endregion
 
-        #region Specification<Role> implementation
+        #region Specification<AccessObject> implementation
 
+        /// <summary>
+        /// <see cref="Specification{AccessObject}"/>
+        /// </summary>
+        /// <returns><see cref="Specification{AccessObject}"/></returns>
         public override Expression<Func<AccessObject, bool>> SatisfiedBy()
         {
             return a => a.Module.Id == ModuleId;

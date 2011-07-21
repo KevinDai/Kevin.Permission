@@ -49,15 +49,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mapping\RoleInheritRelationMap.cs" />
     <Compile Include="Mapping\RoleMap.cs" />
     <Compile Include="Mapping\UserMap.cs" />
     <Compile Include="Mapping\UserRoleRelationMap.cs" />
     <Compile Include="PermissionContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Mapping\RoleCategoryMap.cs" />
+    <Compile Include="Resource\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleInheritRelation\RoleInheritRelationService.cs" />
     <Compile Include="Role\RoleCategoryRepository.cs" />
     <Compile Include="Role\RoleRepository.cs" />
-    <Compile Include="UserRoleRelation\UserRoleRelationRepository.cs" />
+    <Compile Include="RoleInheritRelation\RoleInheritRelation.cs" />
+    <Compile Include="UserRoleRelation\UserRoleRelation.cs" />
+    <Compile Include="UserRoleRelation\UserRoleRelationService.cs" />
     <Compile Include="User\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +81,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

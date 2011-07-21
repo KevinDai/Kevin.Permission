@@ -23,12 +23,12 @@ namespace Kevin.Permission.Domain.Entity.Mapping
                 .IsRequired()
                 .HasMaxLength(50);
             this.Property(r => r.Code)
-                .HasColumnName("Id")
+                .HasColumnName("Code")
                 .HasMaxLength(50);
 
             this.HasRequired(r => r.Category)
                 .WithMany()
-                .Map(fk => fk.MapKey("RoleCategoryId"));
+                .Map(fk => fk.MapKey("CategoryId"));
 
         }
     }

@@ -8,7 +8,7 @@ namespace Kevin.Permission.Domain.Entity.Mapping
 {
     using Kevin.Permission.Domain.Core;
 
-    public class UserRoleRelationMap : EntityTypeConfiguration<UserRoleRelation>
+    internal class UserRoleRelationMap : EntityTypeConfiguration<UserRoleRelation>
     {
         public UserRoleRelationMap()
         {

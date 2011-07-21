@@ -16,7 +16,16 @@ namespace Kevin.Permission.Domain.Core
         /// <summary>
         /// 角色数据仓库接口实例对象
         /// </summary>
-        protected IRoleRepository RoleRepository
+        protected IUserRoleRelationService UserRoleRelationRepository
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 角色继承关联数据仓库实例对象
+        /// </summary>
+        protected IRoleInheritRelationService RoleInheritRelationRepository
         {
             get;
             private set;
@@ -36,10 +45,12 @@ namespace Kevin.Permission.Domain.Core
         #region Constructor
 
         public CommonPermissionService(
-            IRoleRepository roleRepository,
+            IUserRoleRelationService userRoleRelationRepository,
+            IRoleInheritRelationService roleInheritRelationRepository,
             ICommonPermissionConfigRepository commonPermissionConfigRepository)
         {
-            RoleRepository = roleRepository;
+            UserRoleRelationRepository = userRoleRelationRepository;
+            RoleInheritRelationRepository = roleInheritRelationRepository;
             CommonPermissionConfigRepository = commonPermissionConfigRepository;
         }
 
@@ -55,11 +66,11 @@ namespace Kevin.Permission.Domain.Core
         protected IEnumerable<Role> GetRolesOfUserWithInheritRoles(User user)
         {
             //用户所属的角色列表
-            var roles = RoleRepository.GetRolesOfUser(user);
+            var roles = UserRoleRelationRepository.GetRolesOfUser(user);
             if (roles.Any())
             {
                 //级联查询指定角色列表中角色继承的角色列表
-                var inheritRoles = RoleRepository.GetInheritRolesOfRoles(roles);
+                var inheritRoles = RoleInheritRelationRepository.GetInheritRolesOfRoles(roles);
                 if (inheritRoles.Any())
                 {
                     roles = roles.Union(inheritRoles);
@@ -201,7 +212,6 @@ namespace Kevin.Permission.Domain.Core
             CommonPermission result = new CommonPermission(accessObject);
             //查询用户关联的角色列表
             var roles = GetRolesOfUserWithInheritRoles(user);
-            roles.OrderBy(r => r.Name);
             if (roles.Any())
             {
                 //查询权限配置对象列表
