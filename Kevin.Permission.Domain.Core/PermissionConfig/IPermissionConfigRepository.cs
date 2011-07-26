@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Kevin.Infrastructure.Domain;
 
 namespace Kevin.Permission.Domain.Core
 {
     /// <summary>
-    /// 范围权限配置对象
+    /// 权限配置对象数据仓库接口
     /// </summary>
-    public class RangePermissionConfig : PermissionConfigBase
+    public interface ICommonPermissionConfigRepository : IRepository<CommonPermissionConfig, int>
     {
     }
 }

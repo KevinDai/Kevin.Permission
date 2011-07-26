@@ -10,7 +10,7 @@ namespace Kevin.Permission.Domain.Core
     /// <summary>
     /// 根据权限配置设置的访问对象进行筛选的规约类
     /// </summary>
-    public class PermissionConfigBaseAccessObjectSpecification : Specification<PermissionConfigBase>
+    public class PermissionConfigBaseAccessObjectSpecification : Specification<PermissionConfig>
     {
 
         #region Members
@@ -41,7 +41,7 @@ namespace Kevin.Permission.Domain.Core
         /// <see cref="Specification{PermissionConfigBase}"/>
         /// </summary>
         /// <returns><see cref="Specification{PermissionConfigBase}"/></returns>
-        public override Expression<Func<PermissionConfigBase, bool>> SatisfiedBy()
+        public override Expression<Func<PermissionConfig, bool>> SatisfiedBy()
         {
             return p => p.AccessObject.Id == AccessObjectId;
         }

@@ -12,7 +12,7 @@ namespace Kevin.Permission.Domain.Core
     /// <summary>
     /// 根据角色筛选与角色关联的权限配置对象规约类
     /// </summary>
-    public class PermissionConfigBaseRolesSpecification : Specification<PermissionConfigBase>
+    public class PermissionConfigBaseRolesSpecification : Specification<PermissionConfig>
     {
 
         #region Members
@@ -48,7 +48,7 @@ namespace Kevin.Permission.Domain.Core
         /// <see cref="Specification{PermissionConfigBase}"/>
         /// </summary>
         /// <returns><see cref="Specification{PermissionConfigBase}"/></returns>
-        public override Expression<Func<PermissionConfigBase, bool>> SatisfiedBy()
+        public override Expression<Func<PermissionConfig, bool>> SatisfiedBy()
         {
             return p => RoleIds.Contains(p.Role.Id);
         }

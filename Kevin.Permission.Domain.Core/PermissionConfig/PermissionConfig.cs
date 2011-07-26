@@ -11,9 +11,9 @@ namespace Kevin.Permission.Domain.Core
     using Kevin.Permission.Infrastructure.Entity;
 
     /// <summary>
-    /// 权限配置对象基类
+    /// 权限配置对象类
     /// </summary>
-    public abstract class PermissionConfigBase : EntityBase<int>, ILock
+    public class PermissionConfig : EntityBase<int>, ILock
     {
 
         #region Members
@@ -60,13 +60,13 @@ namespace Kevin.Permission.Domain.Core
 
         #region Constructor
 
-        public PermissionConfigBase()
+        public PermissionConfig()
         {
             _operationPermissionConfigs = new List<OperationPermissionConfig>();
             _readOnlyOperationPermissionCinfigs = new ReadOnlyCollection<OperationPermissionConfig>(_operationPermissionConfigs);
         }
 
-        public PermissionConfigBase(Role role, AccessObject accessObject)
+        public PermissionConfig(Role role, AccessObject accessObject)
         {
             Guidance.ArgumentNotNull(role, "role");
             Guidance.ArgumentNotNull(accessObject, "accessObject");

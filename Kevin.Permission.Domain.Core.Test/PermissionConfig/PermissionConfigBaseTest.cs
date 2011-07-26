@@ -76,7 +76,7 @@ namespace Kevin.Permission.Domain.Core.Test
 
     }
 
-    public class PermissionConfigForTest : PermissionConfigBase
+    public class PermissionConfigForTest : PermissionConfig
     {
         public PermissionConfigForTest(Role role, AccessObject accessObject)
             : base(role, accessObject)

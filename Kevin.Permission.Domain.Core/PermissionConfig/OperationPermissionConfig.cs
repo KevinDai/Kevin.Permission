@@ -17,7 +17,7 @@ namespace Kevin.Permission.Domain.Core
         /// <summary>
         /// 所属权限配置对象
         /// </summary>
-        public PermissionConfigBase PermissionConfig
+        public PermissionConfig PermissionConfig
         {
             get;
             private set;
@@ -58,7 +58,7 @@ namespace Kevin.Permission.Domain.Core
         {
         }
 
-        public OperationPermissionConfig(PermissionConfigBase permissionConfig, Operation operation)
+        public OperationPermissionConfig(PermissionConfig permissionConfig, Operation operation)
         {
             PermissionConfig = permissionConfig;
             Operation = operation;

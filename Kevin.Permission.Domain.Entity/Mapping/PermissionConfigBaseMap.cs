@@ -10,7 +10,7 @@ namespace Kevin.Permission.Domain.Entity.Mapping
 {
     using Kevin.Permission.Domain.Core;
 
-    public class PermissionConfigBaseMap : EntityTypeConfiguration<PermissionConfigBase>
+    public class PermissionConfigBaseMap : EntityTypeConfiguration<PermissionConfig>
     {
         public PermissionConfigBaseMap()
         {
