@@ -7,7 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Kevin.Permission.Domain.Core.Test
 {
     [TestClass]
-    public class PermissionConfigBaseTest
+    public class PermissionConfigTest
     {
         [TestMethod]
         public void PermissionConfigBase_Construct_Test()
@@ -17,7 +17,7 @@ namespace Kevin.Permission.Domain.Core.Test
             var accessObject = AccessObjectFactory.CreateAcessObject(1, false);
 
             //操作
-            var permissionConfig = new PermissionConfigForTest(role, accessObject);
+            var permissionConfig = new PermissionConfig(role, accessObject);
 
             //验证
             Assert.AreSame(role, permissionConfig.Role);
@@ -31,7 +31,7 @@ namespace Kevin.Permission.Domain.Core.Test
             //初始化
             var role = new Role();
             var accessObject = AccessObjectFactory.CreateAcessObject(1, false);
-            var permissionConfig = new PermissionConfigForTest(role, accessObject);
+            var permissionConfig = new PermissionConfig(role, accessObject);
             var operation = accessObject.Operations.First();
 
             //操作
@@ -48,7 +48,7 @@ namespace Kevin.Permission.Domain.Core.Test
             //初始化
             var role = new Role();
             var accessObject = AccessObjectFactory.CreateAcessObject(1, false);
-            var permissionConfig = new PermissionConfigForTest(role, accessObject);
+            var permissionConfig = new PermissionConfig(role, accessObject);
             var operation = accessObject.Operations.First();
 
             //操作
@@ -68,7 +68,7 @@ namespace Kevin.Permission.Domain.Core.Test
             //初始化
             var role = new Role();
             var accessObject = AccessObjectFactory.CreateAcessObject(1, false);
-            var permissionConfig = new PermissionConfigForTest(role, accessObject);
+            var permissionConfig = new PermissionConfig(role, accessObject);
 
             //操作
             permissionConfig.SetOperationPermission(new Operation(), true, true);
@@ -76,12 +76,4 @@ namespace Kevin.Permission.Domain.Core.Test
 
     }
 
-    public class PermissionConfigForTest : PermissionConfig
-    {
-        public PermissionConfigForTest(Role role, AccessObject accessObject)
-            : base(role, accessObject)
-        {
-        }
-
-    }
 }

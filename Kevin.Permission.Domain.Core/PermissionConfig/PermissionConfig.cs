@@ -13,7 +13,7 @@ namespace Kevin.Permission.Domain.Core
     /// <summary>
     /// 权限配置对象类
     /// </summary>
-    public class PermissionConfig : EntityBase<int>, ILock
+    public class PermissionConfig : EntityBase<int>, IAggregateRoot, ILock
     {
 
         #region Members
@@ -67,6 +67,7 @@ namespace Kevin.Permission.Domain.Core
         }
 
         public PermissionConfig(Role role, AccessObject accessObject)
+            : this()
         {
             Guidance.ArgumentNotNull(role, "role");
             Guidance.ArgumentNotNull(accessObject, "accessObject");

@@ -15,14 +15,14 @@ namespace Kevin.Permission.Domain.Core.Test
             //初始化
             Role role = new Role();
             AccessObject accessObject = AccessObjectFactory.CreateAcessObject(1, false);
-            CommonPermissionConfig config = new CommonPermissionConfig(role, accessObject);
+            PermissionConfig config = new PermissionConfig(role, accessObject);
 
             var operation = accessObject.Operations.First();
             config.SetOperationPermission(operation, true, false);
 
             CommonPermission commonPermission = new CommonPermission(
                 accessObject,
-                new CommonPermissionConfig[] { config });
+                new PermissionConfig[] { config });
 
             //验证
             Assert.AreEqual(accessObject.Operations.Count(), commonPermission.OperationPermissions.Count());
@@ -38,7 +38,7 @@ namespace Kevin.Permission.Domain.Core.Test
             //初始化
             Role role = new Role();
             AccessObject accessObject = AccessObjectFactory.CreateAcessObject(1, false);
-            CommonPermissionConfig config = new CommonPermissionConfig(role, accessObject);
+            PermissionConfig config = new PermissionConfig(role, accessObject);
             var operation = accessObject.Operations.First();
 
             CommonPermission commonPermission = new CommonPermission(accessObject);
@@ -58,7 +58,7 @@ namespace Kevin.Permission.Domain.Core.Test
             //初始化
             Role role = new Role();
             AccessObject accessObject = AccessObjectFactory.CreateAcessObject(1, false);
-            CommonPermissionConfig config = new CommonPermissionConfig(role, accessObject);
+            PermissionConfig config = new PermissionConfig(role, accessObject);
 
             CommonPermission commonPermission = new CommonPermission(accessObject);
 
@@ -72,7 +72,7 @@ namespace Kevin.Permission.Domain.Core.Test
             //初始化
             Role role = new Role();
             AccessObject accessObject = AccessObjectFactory.CreateAcessObject(1, false);
-            CommonPermissionConfig config = new CommonPermissionConfig(role, accessObject);
+            PermissionConfig config = new PermissionConfig(role, accessObject);
             var operation = accessObject.Operations.First();
             config.SetOperationPermission(operation, true, false);
 
@@ -95,14 +95,14 @@ namespace Kevin.Permission.Domain.Core.Test
             //初始化
             Role role = new Role();
             AccessObject accessObject = AccessObjectFactory.CreateAcessObject(1, false);
-            CommonPermissionConfig config = new CommonPermissionConfig(role, accessObject);
+            PermissionConfig config = new PermissionConfig(role, accessObject);
             var operation = accessObject.Operations.First();
             config.SetOperationPermission(operation, true, false);
 
             CommonPermission commonPermission = new CommonPermission(accessObject);
 
             //操作
-            commonPermission.PermissionCalculate(new CommonPermissionConfig());
+            commonPermission.PermissionCalculate(new PermissionConfig());
         }
 
     }

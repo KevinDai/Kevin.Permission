@@ -26,14 +26,14 @@ namespace Kevin.Permission.Domain.Core
         /// <summary>
         /// 进行权限计算的权限配置列表
         /// </summary>
-        public IEnumerable<CommonPermissionConfig> PermissionConfigs
+        public IEnumerable<PermissionConfig> PermissionConfigs
         {
             get
             {
                 return _permissionConfigs;
             }
         }
-        private IList<CommonPermissionConfig> _permissionConfigs;
+        private IList<PermissionConfig> _permissionConfigs;
 
         /// <summary>
         /// 操作的权限列表
@@ -52,11 +52,11 @@ namespace Kevin.Permission.Domain.Core
         #region Constructor
 
         public CommonPermission(AccessObject accessObject)
-            : this(accessObject, new CommonPermissionConfig[] { })
+            : this(accessObject, new PermissionConfig[] { })
         {
         }
 
-        public CommonPermission(AccessObject accessObject, IEnumerable<CommonPermissionConfig> permissionConfigs)
+        public CommonPermission(AccessObject accessObject, IEnumerable<PermissionConfig> permissionConfigs)
         {
             Guidance.ArgumentNotNull(accessObject, "accessObject");
             Guidance.ArgumentNotNull(permissionConfigs, "permissionConfigs");
@@ -68,7 +68,7 @@ namespace Kevin.Permission.Domain.Core
             }
 
             AccessObject = accessObject;
-            _permissionConfigs = new List<CommonPermissionConfig>(permissionConfigs);
+            _permissionConfigs = new List<PermissionConfig>(permissionConfigs);
 
             OperationPermissionsInitialize();
             PermissionCalculate();
@@ -106,7 +106,7 @@ namespace Kevin.Permission.Domain.Core
         /// </summary>
         /// <param name="permissionConfig">权限配置</param>
         /// <param name="append">是否添加配置对象到配置对象列表</param>
-        private void PermissionCalculate(CommonPermissionConfig permissionConfig, bool append)
+        private void PermissionCalculate(PermissionConfig permissionConfig, bool append)
         {
             Guidance.ArgumentNotNull(permissionConfig, "permissionConfig");
 
@@ -143,7 +143,7 @@ namespace Kevin.Permission.Domain.Core
         /// 根据权限配置进行计算权限
         /// </summary>
         /// <param name="permissionConfig">权限配置</param>
-        public void PermissionCalculate(CommonPermissionConfig permissionConfig)
+        public void PermissionCalculate(PermissionConfig permissionConfig)
         {
             PermissionCalculate(permissionConfig, true);
         }

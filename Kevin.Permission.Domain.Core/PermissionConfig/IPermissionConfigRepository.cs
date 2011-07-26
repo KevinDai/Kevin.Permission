@@ -9,7 +9,7 @@ namespace Kevin.Permission.Domain.Core
     /// <summary>
     /// 权限配置对象数据仓库接口
     /// </summary>
-    public interface ICommonPermissionConfigRepository : IRepository<CommonPermissionConfig, int>
+    public interface IPermissionConfigRepository : IRepository<PermissionConfig, int>
     {
     }
 }

@@ -13,13 +13,13 @@ namespace Kevin.Permission.Domain.Entity
     /// <summary>
     /// 操作权限配置书库仓库类
     /// </summary>
-    public class CommonPermissionConfigRepository
-        : Repository<CommonPermissionConfig, int>, ICommonPermissionConfigRepository
+    public class PermissionConfigRepository
+        : Repository<PermissionConfig, int>, IPermissionConfigRepository
     {
 
         #region Constructor
 
-        public CommonPermissionConfigRepository(IEntityUnitOfWork unitOfWork)
+        public PermissionConfigRepository(IEntityUnitOfWork unitOfWork)
             : base(unitOfWork)
         {
         }
@@ -28,7 +28,7 @@ namespace Kevin.Permission.Domain.Entity
 
         #region Repository override
 
-        protected override IQueryable<CommonPermissionConfig> Query
+        protected override IQueryable<PermissionConfig> Query
         {
             get
             {

@@ -8,7 +8,7 @@ namespace Kevin.Permission.Domain.Entity.Mapping
 {
     using Kevin.Permission.Domain.Core;
 
-    public class CommonPermissionConfigMap : EntityTypeConfiguration<CommonPermissionConfig>
+    public class CommonPermissionConfigMap : EntityTypeConfiguration<PermissionConfig>
     {
         //public CommonPermissionConfigMap()
         //{

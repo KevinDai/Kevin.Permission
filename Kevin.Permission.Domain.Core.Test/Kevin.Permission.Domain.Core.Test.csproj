@@ -62,7 +62,7 @@
     <Compile Include="PermissionService\CommonPermissionTest.cs" />
     <Compile Include="PermissionService\OperationPermissionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PermissionConfig\PermissionConfigBaseTest.cs" />
+    <Compile Include="PermissionConfig\PermissionConfigTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kevin.Permission.Domain.Core\Kevin.Permission.Domain.Core.csproj">

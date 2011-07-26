@@ -15,7 +15,7 @@ namespace Kevin.Permission.Domain.Core.Test
         {
             //初始化
             var operation = OperationFactory.CreateOperation(1);
-            var operationPermissionConfig = new OperationPermissionConfig(new CommonPermissionConfig(), operation);
+            var operationPermissionConfig = new OperationPermissionConfig(new PermissionConfig(), operation);
 
             var operationPermission = new OperationPermission(operation);
             Assert.IsFalse(operationPermission.HavePermission);
@@ -39,7 +39,7 @@ namespace Kevin.Permission.Domain.Core.Test
         {
             //初始化
             var operation = OperationFactory.CreateOperation(1);
-            var operationPermissionConfig = new OperationPermissionConfig(new CommonPermissionConfig(), new Operation());
+            var operationPermissionConfig = new OperationPermissionConfig(new PermissionConfig(), new Operation());
 
             var operationPermission = new OperationPermission(operation);
 

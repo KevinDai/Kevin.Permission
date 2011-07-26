@@ -53,13 +53,11 @@
     <Compile Include="PermissionService\CommonPermission.cs" />
     <Compile Include="PermissionService\CommonPermissionService.cs" />
     <Compile Include="PermissionService\ICommonPermissionService.cs" />
-    <Compile Include="PermissionConfig\ICommonPermissionConfigRepository.cs" />
+    <Compile Include="PermissionConfig\IPermissionConfigRepository.cs" />
     <Compile Include="PermissionConfig\OperationPermissionConfig.cs" />
-    <Compile Include="PermissionConfig\CommonPermissionConfig.cs" />
-    <Compile Include="PermissionConfig\PermissionConfigBaseAccessObjectSpecification.cs" />
-    <Compile Include="PermissionConfig\PermissionConfigBaseRolesSpecification.cs" />
-    <Compile Include="PermissionConfig\PermissionConfigBase.cs" />
-    <Compile Include="PermissionConfig\RangePermissionConfig.cs" />
+    <Compile Include="PermissionConfig\PermissionConfigAccessObjectSpecification.cs" />
+    <Compile Include="PermissionConfig\PermissionConfigRolesSpecification.cs" />
+    <Compile Include="PermissionConfig\PermissionConfig.cs" />
     <Compile Include="PermissionService\OperationPermission.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource\Messages.Designer.cs">

@@ -36,7 +36,7 @@ namespace Kevin.Permission.Domain.Core
         /// <summary>
         /// 普通的权限配置对象数据仓库接口实例对象
         /// </summary>
-        protected ICommonPermissionConfigRepository CommonPermissionConfigRepository
+        protected IPermissionConfigRepository PermissionConfigRepository
         {
             get;
             private set;
@@ -49,11 +49,11 @@ namespace Kevin.Permission.Domain.Core
         public CommonPermissionService(
             IUserRoleRelationService userRoleRelationRepository,
             IRoleInheritRelationService roleInheritRelationRepository,
-            ICommonPermissionConfigRepository commonPermissionConfigRepository)
+            IPermissionConfigRepository permissionConfigRepository)
         {
             UserRoleRelationRepository = userRoleRelationRepository;
             RoleInheritRelationRepository = roleInheritRelationRepository;
-            CommonPermissionConfigRepository = commonPermissionConfigRepository;
+            PermissionConfigRepository = permissionConfigRepository;
         }
 
         #endregion
@@ -87,14 +87,14 @@ namespace Kevin.Permission.Domain.Core
         /// <param name="roles">角色列表</param>
         /// <param name="accessObject">访问对象</param>
         /// <returns>权限配置对象列表</returns>
-        protected IEnumerable<CommonPermissionConfig> GetPermissionConfigs(IEnumerable<Role> roles, AccessObject accessObject)
+        protected IEnumerable<PermissionConfig> GetPermissionConfigs(IEnumerable<Role> roles, AccessObject accessObject)
         {
             //根据角色列表以及访问对象查询相关的权限配置对象
             var pcbRolesSpec = new PermissionConfigBaseRolesSpecification(roles.Select(r => r.Id));
             var pcbAccessObjectSpec = new PermissionConfigBaseAccessObjectSpecification(accessObject.Id);
-            var spec = (pcbRolesSpec & pcbRolesSpec).OfType<CommonPermissionConfig>();
+            var spec = pcbRolesSpec & pcbRolesSpec;
 
-            var configs = CommonPermissionConfigRepository.FindBy(spec);
+            var configs = PermissionConfigRepository.FindBy(spec);
             return configs;
         }
 

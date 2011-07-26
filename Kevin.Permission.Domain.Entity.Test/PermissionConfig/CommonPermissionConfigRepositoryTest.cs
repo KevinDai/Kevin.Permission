@@ -11,19 +11,19 @@ namespace Kevin.Permission.Domain.Entity.Test.PermissionConfig
     using Kevin.Permission.Domain.Core;
 
     [TestClass]
-    public class CommonPermissionConfigRepositoryTest
+    public class PermissionConfigRepositoryTest
     {
 
         [TestMethod]
-        public void CommonPermissionConfigRepository_Get_Test()
+        public void PermissionConfigRepository_Get_Test()
         {
             var configId = 1;
 
             //初始化
             var unit = EntityUnitOfWorkFactory.CreateUnitOfWork();
-            var commonPermissionConfigRepository = new CommonPermissionConfigRepository(unit);
+            var permissionConfigRepository = new PermissionConfigRepository(unit);
 
-            var config = commonPermissionConfigRepository.Get(configId);
+            var config = permissionConfigRepository.Get(configId);
         }
 
     }
