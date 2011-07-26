@@ -9,6 +9,7 @@ using System.Data.Entity;
 namespace Kevin.Permission.Domain.Entity
 {
     using Kevin.Permission.Domain.Core;
+    using Kevin.Permission.Infrastructure;
 
     /// <summary>
     /// 用户角色关系对象数据仓库类
@@ -45,7 +46,7 @@ namespace Kevin.Permission.Domain.Entity
         /// <returns></returns>
         private UserRoleRelation Get(User user, Role role)
         {
-            var relation = UnitOfWork.DbSet<UserRoleRelation, int>()
+            var relation = UnitOfWork.DbSet<UserRoleRelation>()
                 .FirstOrDefault(urr =>
                     urr.Role.Id == role.Id
                     &&
@@ -60,7 +61,7 @@ namespace Kevin.Permission.Domain.Entity
         /// <returns>用户角色关联关系对象查询对象</returns>
         private IQueryable<UserRoleRelation> GetRelationsOfRole(Role role)
         {
-            var relations = UnitOfWork.DbSet<UserRoleRelation, int>()
+            var relations = UnitOfWork.DbSet<UserRoleRelation>()
                 .Where(urr => urr.Role.Id == role.Id);
             return relations;
         }
@@ -72,7 +73,7 @@ namespace Kevin.Permission.Domain.Entity
         /// <returns>用户角色关联关系对象查询对象</returns>
         private IQueryable<UserRoleRelation> GetRelationsOfUser(User user)
         {
-            var relations = UnitOfWork.DbSet<UserRoleRelation, int>()
+            var relations = UnitOfWork.DbSet<UserRoleRelation>()
                 .Where(urr => urr.User.Id == user.Id);
             return relations;
         }

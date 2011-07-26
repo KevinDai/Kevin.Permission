@@ -10,6 +10,7 @@ using System.Data.Entity;
 namespace Kevin.Permission.Domain.Entity
 {
     using Kevin.Permission.Domain.Core;
+    using Kevin.Permission.Infrastructure;
 
     /// <summary>
     /// 角色继承关联数据仓库类
@@ -34,7 +35,7 @@ namespace Kevin.Permission.Domain.Entity
         {
             get
             {
-                return UnitOfWork.DbSet<RoleInheritRelation, int>();
+                return UnitOfWork.DbSet<RoleInheritRelation>();
             }
         }
 

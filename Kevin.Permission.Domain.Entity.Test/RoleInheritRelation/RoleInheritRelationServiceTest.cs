@@ -9,7 +9,6 @@ using Kevin.Infrastructure.Domain;
 namespace Kevin.Permission.Domain.Entity.Test
 {
     using Kevin.Permission.Domain.Core;
-    using Kevin.Permission.Domain.Entity.Resource;
 
     [TestClass]
     public class RoleInheritRelationServiceTest

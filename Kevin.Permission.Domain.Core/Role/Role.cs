@@ -6,6 +6,8 @@ using Kevin.Infrastructure.Domain;
 
 namespace Kevin.Permission.Domain.Core
 {
+    using Kevin.Permission.Infrastructure;
+
     /// <summary>
     /// 角色类
     /// </summary>

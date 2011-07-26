@@ -81,7 +81,10 @@
   <ItemGroup>
     <None Include="AccessObject\_AccessObject.cd" />
     <None Include="PermissionConfig\_PermissionConfig.cd" />
+    <None Include="PermissionService\_PermissionService.cd" />
+    <None Include="RoleInheritRelation\_RoleInheritRelation.cd" />
     <None Include="Role\_Role.cd" />
+    <None Include="UserRoleRelation\_UserRoleRelation.cd" />
     <None Include="User\_User.cd" />
   </ItemGroup>
   <ItemGroup>

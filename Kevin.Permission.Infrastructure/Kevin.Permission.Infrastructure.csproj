@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\IEnumerableExtensions.cs" />
+    <Compile Include="Entity\ILock.cs" />
     <Compile Include="Guidance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

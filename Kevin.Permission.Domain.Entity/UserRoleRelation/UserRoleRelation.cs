@@ -7,6 +7,7 @@ using Kevin.Infrastructure.Domain;
 namespace Kevin.Permission.Domain.Entity
 {
     using Kevin.Permission.Domain.Core;
+    using Kevin.Permission.Infrastructure;
 
     /// <summary>
     /// 用户角色的关联类
@@ -19,11 +20,20 @@ namespace Kevin.Permission.Domain.Entity
         /// <summary>
         /// 用户对象
         /// </summary>
-        public User User { get; private set; }
+        public User User
+        {
+            get;
+            private set;
+        }
+
         /// <summary>
         /// 角色对象
         /// </summary>
-        public Role Role { get; private set; }
+        public Role Role
+        {
+            get;
+            private set;
+        }
 
         #endregion
 

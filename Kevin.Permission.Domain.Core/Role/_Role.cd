@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Kevin.Permission.Domain.Core.Role" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="1.25" Width="1.5" />
+    <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAAAAAgAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>Role\Role.cs</FileName>
@@ -12,29 +12,29 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Kevin.Permission.Domain.Core.RoleCategory" BaseTypeListCollapsed="true">
-    <Position X="3.5" Y="1.75" Width="1.5" />
+    <Position X="3.5" Y="1.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAACAAAAAAAAgAAQAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAIAACAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Role\RoleCategory.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Interface Name="Kevin.Permission.Domain.Core.IRoleCategoryRepository">
-    <Position X="5.75" Y="1.25" Width="1.5" />
+    <Position X="5.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Role\IRoleCategoryRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Kevin.Permission.Domain.Core.IRoleRepository">
-    <Position X="7.75" Y="1.25" Width="2.25" />
+    <Position X="8" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAAAQAACAAAAAAAAAAACAAAIAQAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Role\IRoleRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="Kevin.Permission.Domain.Core.RoleInheritType">
-    <Position X="5.75" Y="3" Width="1.5" />
+    <Position X="6.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAQAAAAAAAAIAA=</HashCode>
       <FileName>Role\RoleInheritType.cs</FileName>

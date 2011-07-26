@@ -7,6 +7,8 @@ using Kevin.Infrastructure.Domain.Specification;
 
 namespace Kevin.Permission.Domain.Core
 {
+    using Kevin.Permission.Infrastructure;
+
     /// <summary>
     /// 根据角色筛选与角色关联的权限配置对象规约类
     /// </summary>

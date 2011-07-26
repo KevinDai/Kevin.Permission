@@ -4,13 +4,17 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using Kevin.Infrastructure.Domain;
+using System.Runtime.CompilerServices;
 
 namespace Kevin.Permission.Domain.Core
 {
+    using Kevin.Permission.Infrastructure;
+    using Kevin.Permission.Infrastructure.Entity;
+
     /// <summary>
     /// 权限的访问对象类
     /// </summary>
-    public class AccessObject : EntityBase<int>, IAggregateRoot
+    public class AccessObject : EntityBase<int>, IAggregateRoot, ILock
     {
         #region Members
 
@@ -55,9 +59,20 @@ namespace Kevin.Permission.Domain.Core
         /// </summary>
         public ICollection<Operation> Operations
         {
-            get;
-            private set;
+            get
+            {
+                if (_locked)
+                {
+                    return _readOnlyOpeartions;
+                }
+                else
+                {
+                    return _operations;
+                }
+            }
         }
+        private ReadOnlyCollection<Operation> _readOnlyOpeartions;
+        private IList<Operation> _operations;
 
         #endregion
 
@@ -65,7 +80,8 @@ namespace Kevin.Permission.Domain.Core
 
         public AccessObject()
         {
-            Operations = new List<Operation>();
+            _operations = new List<Operation>();
+            _readOnlyOpeartions = new ReadOnlyCollection<Operation>(_operations);
         }
 
         public AccessObject(Module module, bool rangeAcess)
@@ -127,6 +143,30 @@ namespace Kevin.Permission.Domain.Core
                 AddBrokenRule(new BusinessRule("Operations", "必须添加有效的操作对象"));
             }
         }
+
+        #endregion
+
+        #region ILock implementation
+
+        /// <summary>
+        /// <see cref="ILock"/>
+        /// </summary>
+        public void Lock()
+        {
+            _locked = true;
+        }
+
+        /// <summary>
+        /// <see cref="ILock"/>
+        /// </summary>
+        public bool Locked
+        {
+            get
+            {
+                return _locked;
+            }
+        }
+        private bool _locked = false;
 
         #endregion
     }

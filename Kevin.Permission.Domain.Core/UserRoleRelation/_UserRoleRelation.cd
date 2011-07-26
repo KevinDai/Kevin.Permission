@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="Kevin.Permission.Domain.Core.IUserRoleRelationService">
+    <Position X="3.75" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAEAACAAAAAAAAACCAAAAQAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserRoleRelation\IUserRoleRelationService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>

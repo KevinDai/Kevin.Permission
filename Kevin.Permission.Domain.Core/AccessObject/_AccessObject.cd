@@ -3,7 +3,7 @@
   <Class Name="Kevin.Permission.Domain.Core.AccessObject" BaseTypeListCollapsed="true">
     <Position X="3.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgAAAACAACAAAAAAAAgAAQAAAAAAAAAAIAACAAAAAA=</HashCode>
+      <HashCode>AAgAAAACAACAAAAAAAAwAAQAAAAAAAAAAAAACAAQAAA=</HashCode>
       <FileName>AccessObject\AccessObject.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -30,22 +30,22 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Interface Name="Kevin.Permission.Domain.Core.IAccessObjectRepository" Collapsed="true">
-    <Position X="9.25" Y="1.25" Width="1.5" />
+  <Interface Name="Kevin.Permission.Domain.Core.IAccessObjectRepository">
+    <Position X="3.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>AccessObject\IAccessObjectRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Kevin.Permission.Domain.Core.IModuleRepository" Collapsed="true">
-    <Position X="11" Y="1.25" Width="1.5" />
+  <Interface Name="Kevin.Permission.Domain.Core.IModuleRepository">
+    <Position X="6" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>AccessObject\IModuleRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Kevin.Permission.Domain.Core.IOperationRepository" Collapsed="true">
-    <Position X="9.25" Y="2" Width="1.5" />
+  <Interface Name="Kevin.Permission.Domain.Core.IOperationRepository">
+    <Position X="1.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>AccessObject\IOperationRepository.cs</FileName>

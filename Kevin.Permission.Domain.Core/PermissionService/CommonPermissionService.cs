@@ -5,6 +5,8 @@ using System.Text;
 
 namespace Kevin.Permission.Domain.Core
 {
+    using Kevin.Permission.Infrastructure;
+
     /// <summary>
     /// 普通权限计算服务类
     /// </summary>

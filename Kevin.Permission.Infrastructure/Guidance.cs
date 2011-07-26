@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 
-namespace Kevin.Permission.Domain.Core
+namespace Kevin.Permission.Infrastructure
 {
     public static class Guidance
     {

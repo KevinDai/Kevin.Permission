@@ -69,6 +69,10 @@
       <Project>{748DE3DB-DB3D-43AD-9222-3172B40BBFB9}</Project>
       <Name>Kevin.Permission.Domain.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Kevin.Permission.Infrastructure\Kevin.Permission.Infrastructure.csproj">
+      <Project>{4B94EA9C-A46C-4729-A0DD-674627CFDB12}</Project>
+      <Name>Kevin.Permission.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

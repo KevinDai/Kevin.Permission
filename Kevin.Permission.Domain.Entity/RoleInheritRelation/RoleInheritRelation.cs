@@ -7,6 +7,7 @@ using Kevin.Infrastructure.Domain;
 namespace Kevin.Permission.Domain.Entity
 {
     using Kevin.Permission.Domain.Core;
+    using Kevin.Permission.Infrastructure;
 
     /// <summary>
     /// 角色继承关联类

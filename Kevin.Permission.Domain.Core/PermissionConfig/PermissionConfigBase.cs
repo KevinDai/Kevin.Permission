@@ -7,10 +7,13 @@ using Kevin.Infrastructure.Domain;
 
 namespace Kevin.Permission.Domain.Core
 {
+    using Kevin.Permission.Infrastructure;
+    using Kevin.Permission.Infrastructure.Entity;
+
     /// <summary>
     /// 权限配置对象基类
     /// </summary>
-    public abstract class PermissionConfigBase : EntityBase<int>
+    public abstract class PermissionConfigBase : EntityBase<int>, ILock
     {
 
         #region Members
@@ -38,9 +41,20 @@ namespace Kevin.Permission.Domain.Core
         /// </summary>
         public ICollection<OperationPermissionConfig> OperationPermissionConfigs
         {
-            get;
-            private set;
+            get
+            {
+                if (_locked)
+                {
+                    return _readOnlyOperationPermissionCinfigs;
+                }
+                else
+                {
+                    return _operationPermissionConfigs;
+                }
+            }
         }
+        private ReadOnlyCollection<OperationPermissionConfig> _readOnlyOperationPermissionCinfigs;
+        private IList<OperationPermissionConfig> _operationPermissionConfigs;
 
         #endregion
 
@@ -48,6 +62,8 @@ namespace Kevin.Permission.Domain.Core
 
         public PermissionConfigBase()
         {
+            _operationPermissionConfigs = new List<OperationPermissionConfig>();
+            _readOnlyOperationPermissionCinfigs = new ReadOnlyCollection<OperationPermissionConfig>(_operationPermissionConfigs);
         }
 
         public PermissionConfigBase(Role role, AccessObject accessObject)
@@ -58,6 +74,8 @@ namespace Kevin.Permission.Domain.Core
             Role = role;
             AccessObject = accessObject;
             OperationConfigCollectionInitialize();
+            //初始化完成后锁定对象
+            Lock();
         }
 
         #endregion
@@ -69,12 +87,10 @@ namespace Kevin.Permission.Domain.Core
         /// </summary>
         private void OperationConfigCollectionInitialize()
         {
-            List<OperationPermissionConfig> list = new List<OperationPermissionConfig>();
             foreach (var operation in AccessObject.Operations)
             {
-                list.Add(new OperationPermissionConfig(this, operation));
+                _operationPermissionConfigs.Add(new OperationPermissionConfig(this, operation));
             }
-            this.OperationPermissionConfigs = new ReadOnlyCollection<OperationPermissionConfig>(list);
         }
 
         /// <summary>
@@ -144,6 +160,30 @@ namespace Kevin.Permission.Domain.Core
                 AddBrokenRule(new BusinessRule("AccessObject", "配置权限的防伪对象无效"));
             }
         }
+
+        #endregion
+
+        #region ILock implementation
+
+        /// <summary>
+        /// <see cref="ILock"/>
+        /// </summary>
+        public void Lock()
+        {
+            _locked = true;
+        }
+
+        /// <summary>
+        /// <see cref="ILock"/>
+        /// </summary>
+        public bool Locked
+        {
+            get
+            {
+                return _locked;
+            }
+        }
+        private bool _locked;
 
         #endregion
     }
