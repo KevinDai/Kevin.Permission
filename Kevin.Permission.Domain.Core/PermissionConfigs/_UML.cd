@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Kevin.Permission.Domain.Core.Role" Collapsed="true">
+    <Position X="1" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAgAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Role\Role.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Kevin.Permission.Domain.Core.PermissionConfigs.OperationPermissionConfig">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAIIAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>PermissionConfigs\OperationPermissionConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kevin.Permission.Domain.Core.PermissionConfigs.PermissionConfig" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="1.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAggICAAAAAEAAAACAAAAIAACJAAAAACEEAAAA=</HashCode>
+      <FileName>PermissionConfigs\PermissionConfig.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Role" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="OperationPermissionConfigs" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Kevin.Permission.Domain.Core.PermissionConfigs.IPermissionConfigRepository" Collapsed="true">
+    <Position X="1" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PermissionConfigs\IPermissionConfigRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>

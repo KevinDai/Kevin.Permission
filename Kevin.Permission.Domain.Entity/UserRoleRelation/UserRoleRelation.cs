@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using Kevin.Infrastructure.Domain;
 
-namespace Kevin.Permission.Domain.Entity
+namespace Kevin.Permission.Domain.Entity.UserRoleRelation
 {
-    using Kevin.Permission.Domain.Core;
+    using Kevin.Permission.Domain.Core.UserRoleRelation;
+    using Kevin.Permission.Domain.Core.Users;
+    using Kevin.Permission.Domain.Core.Roles;
     using Kevin.Permission.Infrastructure;
 
     /// <summary>

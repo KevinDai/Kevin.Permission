@@ -6,9 +6,11 @@ using Kevin.Infrastructure.Domain.EntityFramework;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity;
 
-namespace Kevin.Permission.Domain.Entity
+namespace Kevin.Permission.Domain.Entity.UserRoleRelation
 {
-    using Kevin.Permission.Domain.Core;
+    using Kevin.Permission.Domain.Core.Roles;
+    using Kevin.Permission.Domain.Core.Users;
+    using Kevin.Permission.Domain.Core.UserRoleRelation;
     using Kevin.Permission.Infrastructure;
 
     /// <summary>

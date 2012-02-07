@@ -54,8 +54,8 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessObject\AccessObjectRepositoryTest.cs" />
-    <Compile Include="PermissionConfig\CommonPermissionConfigRepositoryTest.cs" />
+    <Compile Include="AccessObjects\AccessObjectRepositoryTest.cs" />
+    <Compile Include="PermissionConfig\PermissionConfigRepositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EntityUnitOfWorkFactory.cs" />
     <Compile Include="RoleInheritRelation\RoleInheritRelationServiceTest.cs" />

@@ -26,8 +26,7 @@ namespace Kevin.Permission.Domain.Entity
             modelBuilder.Configurations.Add(new ModuleMap());
             modelBuilder.Configurations.Add(new AccessObjectMap());
             modelBuilder.Configurations.Add(new OperationPermissionConfigMap());
-            modelBuilder.Configurations.Add(new PermissionConfigBaseMap());
-            modelBuilder.Configurations.Add(new CommonPermissionConfigMap());
+            modelBuilder.Configurations.Add(new PermissionConfigMap());
         }
 
     }

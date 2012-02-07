@@ -1,0 +1,418 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Kevin.Infrastructure.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:Kevin.Infrastructure.Domain.ISQL">
+            <summary>
+            进行SQL查询的接口定义
+            </summary>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.ISQL.ExecuteQuery``2(System.String,System.Object[])">
+            <summary>
+            执行SQL语句进行查询
+            </summary>
+            <typeparam name="TEntity">查询结果对应的实体类型</typeparam>
+            <param name="sqlQuery">SQL语句</param>
+            <param name="parameters">查询参数容器</param>
+            <returns>实体列表</returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.ISQL.ExecuteCommand(System.String,System.Object[])">
+            <summary>
+            执行SQL语句进行操作
+            </summary>
+            <param name="sqlCommand">SQL语句</param>
+            <param name="parameters">参数列表</param>
+            <returns>受影响的记录数量</returns>
+        </member>
+        <member name="T:Kevin.Infrastructure.Domain.Specification.Specification`1">
+            <summary>
+            Represent a Expression Specification
+            <remarks>
+            Specification overload operators for create AND,OR or NOT specifications.
+            Additionally overload AND and OR operators with the same sense of ( binary And and binary Or ).
+            C# couldn’t overload the AND and OR operators directly since the framework doesn’t allow such craziness. But
+            with overloading false and true operators this is posible. For explain this behavior please read
+            http://msdn.microsoft.com/en-us/library/aa691312(VS.71).aspx
+            </remarks>
+            </summary>
+            <typeparam name="TEntity">Type of item in the criteria</typeparam>
+        </member>
+        <member name="T:Kevin.Infrastructure.Domain.Specification.ISpecification`1">
+            <summary>
+            Base contract for Specification pattern, for more information
+            about this pattern see http://martinfowler.com/apsupp/spec.pdf
+            or http://en.wikipedia.org/wiki/Specification_pattern.
+            This is really a variant implementation where we have added Linq and
+            lambda expression into this pattern.
+            </summary>
+            <typeparam name="TEntity">Type of entity</typeparam>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.ISpecification`1.SatisfiedBy">
+            <summary>
+            Check if this specification is satisfied by a 
+            specific expression lambda
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.Specification`1.SatisfiedBy">
+            <summary>
+            IsSatisFied Specification pattern method,
+            </summary>
+            <returns>Expression that satisfy this specification</returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.Specification`1.op_BitwiseAnd(Kevin.Infrastructure.Domain.Specification.Specification{`0},Kevin.Infrastructure.Domain.Specification.Specification{`0})">
+            <summary>
+             And operator
+            </summary>
+            <param name="leftSideSpecification">left operand in this AND operation</param>
+            <param name="rightSideSpecification">right operand in this AND operation</param>
+            <returns>New specification</returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.Specification`1.op_BitwiseOr(Kevin.Infrastructure.Domain.Specification.Specification{`0},Kevin.Infrastructure.Domain.Specification.Specification{`0})">
+            <summary>
+            Or operator
+            </summary>
+            <param name="leftSideSpecification">left operand in this OR operation</param>
+            <param name="rightSideSpecification">left operand in this OR operation</param>
+            <returns>New specification </returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.Specification`1.op_LogicalNot(Kevin.Infrastructure.Domain.Specification.Specification{`0})">
+            <summary>
+            Not specification
+            </summary>
+            <param name="specification">Specification to negate</param>
+            <returns>New specification</returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.Specification`1.op_False(Kevin.Infrastructure.Domain.Specification.Specification{`0})">
+            <summary>
+            Override operator false, only for support AND OR operators
+            </summary>
+            <param name="specification">Specification instance</param>
+            <returns>See False operator in C#</returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.Specification`1.op_True(Kevin.Infrastructure.Domain.Specification.Specification{`0})">
+            <summary>
+            Override operator True, only for support AND OR operators
+            </summary>
+            <param name="specification">Specification instance</param>
+            <returns>See True operator in C#</returns>
+        </member>
+        <member name="T:Kevin.Infrastructure.Domain.Specification.DirectSpecification`1">
+            <summary>
+            A Direct Specification is a simple implementation
+            of specification that acquire this from a lambda expression
+            in  constructor
+            </summary>
+            <typeparam name="TEntity">Type of entity that check this specification</typeparam>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.DirectSpecification`1.#ctor(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Default constructor for Direct Specification
+            </summary>
+            <param name="matchingCriteria">A Matching Criteria</param>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.DirectSpecification`1.SatisfiedBy">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Kevin.Infrastructure.Domain.Specification.AndSpecification`1">
+            <summary>
+            A logic AND Specification
+            </summary>
+            <typeparam name="T">Type of entity that check this specification</typeparam>
+        </member>
+        <member name="T:Kevin.Infrastructure.Domain.Specification.CompositeSpecification`1">
+            <summary>
+            Base class for composite specifications
+            </summary>
+            <typeparam name="TEntity">Type of entity that check this specification</typeparam>
+        </member>
+        <member name="P:Kevin.Infrastructure.Domain.Specification.CompositeSpecification`1.LeftSideSpecification">
+            <summary>
+            Left side specification for this composite element
+            </summary>
+        </member>
+        <member name="P:Kevin.Infrastructure.Domain.Specification.CompositeSpecification`1.RightSideSpecification">
+            <summary>
+            Right side specification for this composite element
+            </summary>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.AndSpecification`1.#ctor(Kevin.Infrastructure.Domain.Specification.ISpecification{`0},Kevin.Infrastructure.Domain.Specification.ISpecification{`0})">
+            <summary>
+            Default constructor for AndSpecification
+            </summary>
+            <param name="leftSide">Left side specification</param>
+            <param name="rightSide">Right side specification</param>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.AndSpecification`1.SatisfiedBy">
+            <summary>
+            <see cref="!:Microsoft.Samples.NLayerApp.Domain.Core.Specification.ISpecification&lt;T&gt;"/>
+            </summary>
+            <returns><see cref="!:Microsoft.Samples.NLayerApp.Domain.Core.Specification.ISpecification&lt;T&gt;"/></returns>
+        </member>
+        <member name="P:Kevin.Infrastructure.Domain.Specification.AndSpecification`1.LeftSideSpecification">
+            <summary>
+            Left side specification
+            </summary>
+        </member>
+        <member name="P:Kevin.Infrastructure.Domain.Specification.AndSpecification`1.RightSideSpecification">
+            <summary>
+            Right side specification
+            </summary>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.SortDescriptor`1.#ctor(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            构造函数，默认为升序排列
+            </summary>
+            <param name="sortKeySelector"></param>
+        </member>
+        <member name="T:Kevin.Infrastructure.Domain.EntityBase`1">
+            <summary>
+            实体基类
+            </summary>
+            <typeparam name="TId">实体标识符类型</typeparam>
+        </member>
+        <member name="T:Kevin.Infrastructure.Domain.Specification.OrSpecification`1">
+            <summary>
+            A Logic OR Specification
+            </summary>
+            <typeparam name="T">Type of entity that check this specification</typeparam>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.OrSpecification`1.#ctor(Kevin.Infrastructure.Domain.Specification.ISpecification{`0},Kevin.Infrastructure.Domain.Specification.ISpecification{`0})">
+            <summary>
+            Default constructor for AndSpecification
+            </summary>
+            <param name="leftSide">Left side specification</param>
+            <param name="rightSide">Right side specification</param>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.OrSpecification`1.SatisfiedBy">
+            <summary>
+            <see cref="T:Kevin.Infrastructure.Domain.Specification.ISpecification`1"/>
+            </summary>
+            <returns><see cref="T:Kevin.Infrastructure.Domain.Specification.ISpecification`1"/></returns>
+        </member>
+        <member name="P:Kevin.Infrastructure.Domain.Specification.OrSpecification`1.LeftSideSpecification">
+            <summary>
+            Left side specification
+            </summary>
+        </member>
+        <member name="P:Kevin.Infrastructure.Domain.Specification.OrSpecification`1.RightSideSpecification">
+            <summary>
+            Righ side specification
+            </summary>
+        </member>
+        <member name="F:Kevin.Infrastructure.Domain.ListSortDirection.Ascending">
+            <summary>
+            按升序排序
+            </summary>
+        </member>
+        <member name="F:Kevin.Infrastructure.Domain.ListSortDirection.Descending">
+            <summary>
+            按降序排序
+            </summary>
+        </member>
+        <member name="T:Kevin.Infrastructure.Domain.IUnitOfWork">
+            <summary>
+            统一工作单元接口定义
+            </summary>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.IUnitOfWork.SaveChanges">
+            <summary>
+            提交在当前容器中的所有更新
+            </summary>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.IUnitOfWork.RegisterNew``2(``0)">
+            <summary>
+            记录新增的Entity对象
+            </summary>
+            <typeparam name="TEntity">Entity类型</typeparam>
+            <typeparam name="TId">Entity对象的标识符类型</typeparam>
+            <param name="entity">新增的Entity对象</param>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.IUnitOfWork.RegisterModify``2(``0)">
+            <summary>
+            记录更新的Entity对象
+            </summary>
+            <typeparam name="TEntity">Entity类型</typeparam>
+            <typeparam name="TId">Entity对象的标识符类型</typeparam>
+            <param name="entity">更新的Entity对象</param>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.IUnitOfWork.RegisterRemove``2(``0)">
+            <summary>
+            记录删除的Entity对象
+            </summary>
+            <typeparam name="TEntity">Entity类型</typeparam>
+            <typeparam name="TId">Entity对象的标识符类型</typeparam>
+            <param name="entity">删除的Entity对象</param>
+        </member>
+        <member name="T:Kevin.Infrastructure.Domain.IRepository`2">
+            <summary>
+            实体数据仓库操作接口
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+            <typeparam name="TId">实体标识符类型</typeparam>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.IRepository`2.Get(`1)">
+            <summary>
+            获取指定标识符的实体对象
+            </summary>
+            <param name="id">标识符</param>
+            <returns>实体</returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.IRepository`2.Add(`0)">
+            <summary>
+            添加实体
+            </summary>
+            <param name="entity">实体</param>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.IRepository`2.Update(`0)">
+            <summary>
+            更新实体
+            </summary>
+            <param name="entity">实体</param>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.IRepository`2.Remove(`0)">
+            <summary>
+            删除实体
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.IRepository`2.FindAll(Kevin.Infrastructure.Domain.SortDescriptor{`0}[])">
+            <summary>
+            查询全部实体
+            </summary>
+            <returns>实体列表</returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.IRepository`2.FindBy(Kevin.Infrastructure.Domain.Specification.ISpecification{`0},Kevin.Infrastructure.Domain.SortDescriptor{`0}[])">
+            <summary>
+            根据过滤的规约查询实体
+            </summary>
+            <param name="specification">过滤的规约</param>
+            <param name="sortDescriptors">排序说明对象</param>
+            <returns>实体列表</returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.IRepository`2.FindPageBy(Kevin.Infrastructure.Domain.Specification.ISpecification{`0},System.Int32,System.Int32,Kevin.Infrastructure.Domain.SortDescriptor{`0}[])">
+            <summary>
+            根据过滤的规约查询实体并分页后返回指定页的实体列表
+            </summary>
+            <param name="specification">过滤的规约</param>
+            <param name="pageIndex">指定页的页码</param>
+            <param name="pageCount">分页大小</param>
+            <param name="sortDescriptors">排序说明对象</param>
+            <returns>实体列表</returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.IRepository`2.FindPageBy(Kevin.Infrastructure.Domain.Specification.ISpecification{`0},System.Int32,System.Int32,System.Int32@,Kevin.Infrastructure.Domain.SortDescriptor{`0}[])">
+            <summary>
+            根据过滤的规约查询实体并分页后返回指定页的实体列表
+            </summary>
+            <param name="specification">过滤的规约</param>
+            <param name="pageIndex">指定页的页码</param>
+            <param name="pageCount">分页大小</param>
+            <param name="totalCount">符合过滤规约实体的总数</param>
+            <param name="sortDescriptors">排序说明对象</param>
+            <returns>实体列表</returns>
+        </member>
+        <member name="T:Kevin.Infrastructure.Domain.Specification.NotSpecification`1">
+            <summary>
+            NotEspecification convert a original
+            specification with NOT logic operator
+            </summary>
+            <typeparam name="TEntity">Type of element for this specificaiton</typeparam>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.NotSpecification`1.#ctor(Kevin.Infrastructure.Domain.Specification.ISpecification{`0})">
+            <summary>
+            Constructor for NotSpecificaiton
+            </summary>
+            <param name="originalSpecification">Original specification</param>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.NotSpecification`1.#ctor(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Constructor for NotSpecification
+            </summary>
+            <param name="originalSpecification">Original specificaiton</param>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.NotSpecification`1.SatisfiedBy">
+            <summary>
+            <see cref="T:Kevin.Infrastructure.Domain.Specification.ISpecification`1"/>
+            </summary>
+            <returns><see cref="T:Kevin.Infrastructure.Domain.Specification.ISpecification`1"/></returns>
+        </member>
+        <member name="T:Kevin.Infrastructure.Domain.Specification.ExpressionBuilder">
+            <summary>
+            Extension methods for add And and Or with parameters rebinder
+            </summary>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.ExpressionBuilder.Compose``1(System.Linq.Expressions.Expression{``0},System.Linq.Expressions.Expression{``0},System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression,System.Linq.Expressions.Expression})">
+            <summary>
+            Compose two expression and merge all in a new expression
+            </summary>
+            <typeparam name="T">Type of params in expression</typeparam>
+            <param name="first">Expression instance</param>
+            <param name="second">Expression to merge</param>
+            <param name="merge">Function to merge</param>
+            <returns>New merged expressions</returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.ExpressionBuilder.And``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            And operator
+            </summary>
+            <typeparam name="T">Type of params in expression</typeparam>
+            <param name="first">Right Expression in AND operation</param>
+            <param name="second">Left Expression in And operation</param>
+            <returns>New AND expression</returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.ExpressionBuilder.Or``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Or operator
+            </summary>
+            <typeparam name="T">Type of param in expression</typeparam>
+            <param name="first">Right expression in OR operation</param>
+            <param name="second">Left expression in OR operation</param>
+            <returns>New Or expressions</returns>
+        </member>
+        <member name="T:Kevin.Infrastructure.Domain.Specification.TrueSpecification`1">
+            <summary>
+            True specification
+            </summary>
+            <typeparam name="TEntity">Type of entity in this specification</typeparam>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.TrueSpecification`1.SatisfiedBy">
+            <summary>
+            <see cref="T:Kevin.Infrastructure.Domain.Specification.Specification`1"/>
+            </summary>
+            <returns><see cref="T:Kevin.Infrastructure.Domain.Specification.Specification`1"/></returns>
+        </member>
+        <member name="T:Kevin.Infrastructure.Domain.Specification.ParameterRebinder">
+            <summary>
+            Helper for rebinder parameters without use Invoke method in expressions 
+            ( this methods is not supported in all linq query providers, 
+            for example in Linq2Entities is not supported)
+            </summary>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.ParameterRebinder.#ctor(System.Collections.Generic.Dictionary{System.Linq.Expressions.ParameterExpression,System.Linq.Expressions.ParameterExpression})">
+            <summary>
+            Default construcotr
+            </summary>
+            <param name="map">Map specification</param>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.ParameterRebinder.ReplaceParameters(System.Collections.Generic.Dictionary{System.Linq.Expressions.ParameterExpression,System.Linq.Expressions.ParameterExpression},System.Linq.Expressions.Expression)">
+            <summary>
+            Replate parameters in expression with a Map information
+            </summary>
+            <param name="map">Map information</param>
+            <param name="exp">Expression to replace parameters</param>
+            <returns>Expression with parameters replaced</returns>
+        </member>
+        <member name="M:Kevin.Infrastructure.Domain.Specification.ParameterRebinder.VisitParameter(System.Linq.Expressions.ParameterExpression)">
+            <summary>
+            Visit pattern method
+            </summary>
+            <param name="p">A Parameter expression</param>
+            <returns>New visited expression</returns>
+        </member>
+    </members>
+</doc>

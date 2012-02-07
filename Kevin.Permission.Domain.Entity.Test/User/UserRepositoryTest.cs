@@ -10,6 +10,8 @@ namespace Kevin.Permission.Domain.Entity.Test
 {
 
     using Kevin.Permission.Domain.Core;
+    using Kevin.Permission.Domain.Core.Users;
+    using Kevin.Permission.Domain.Entity.Users;
 
     [TestClass]
     public class UserRepositoryTest

@@ -9,6 +9,9 @@ using Kevin.Infrastructure.Domain;
 namespace Kevin.Permission.Domain.Entity.Test
 {
     using Kevin.Permission.Domain.Core;
+    using Kevin.Permission.Domain.Entity.UserRoleRelation;
+    using Kevin.Permission.Domain.Core.Users;
+    using Kevin.Permission.Domain.Core.Roles;
 
     [TestClass]
     public class UserRoleRelationServiceTest

@@ -6,7 +6,7 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace Kevin.Permission.Domain.Entity.Mapping
 {
-    using Kevin.Permission.Domain.Core;
+    using Kevin.Permission.Domain.Core.PermissionConfigs;
 
     public class OperationPermissionConfigMap : EntityTypeConfiguration<OperationPermissionConfig>
     {
@@ -27,7 +27,7 @@ namespace Kevin.Permission.Domain.Entity.Mapping
                 .WithMany()
                 .Map(fk => fk.MapKey("OperationId"));
             this.HasRequired(opc => opc.PermissionConfig)
-                .WithMany()
+                .WithMany(pc => pc.OperationPermissionConfigs)
                 .Map(fk => fk.MapKey("PermissionConfigId"));
         }
 

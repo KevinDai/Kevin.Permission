@@ -3,3 +3,13 @@ E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\bin\Debug\
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\obj\Debug\ResolveAssemblyReference.cache
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\obj\Debug\Kevin.Permission.Infrastructure.dll
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\obj\Debug\Kevin.Permission.Infrastructure.pdb
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\obj\Debug\Kevin.Permission.Infrastructure.Resource.Messages.resources
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\obj\Debug\GenerateResource.read.1.tlog
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\obj\Debug\GenerateResource.write.1.tlog
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\bin\Debug\Kevin.Infrastructure.Domain.dll
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\bin\Debug\Kevin.Infrastructure.Domain.EntityFramework.dll
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\bin\Debug\Kevin.Infrastructure.IoC.dll
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\bin\Debug\Kevin.Infrastructure.Domain.pdb
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\bin\Debug\Kevin.Infrastructure.Domain.xml
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\bin\Debug\Kevin.Infrastructure.Domain.EntityFramework.pdb
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Infrastructure\bin\Debug\Kevin.Infrastructure.Domain.EntityFramework.xml

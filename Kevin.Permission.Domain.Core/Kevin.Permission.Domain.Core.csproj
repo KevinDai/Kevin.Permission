@@ -43,47 +43,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessObject\AccessObject.cs" />
-    <Compile Include="AccessObject\AccessObjectMuduleSpecification.cs" />
-    <Compile Include="AccessObject\IAccessObjectRepository.cs" />
-    <Compile Include="AccessObject\IModuleRepository.cs" />
-    <Compile Include="AccessObject\IOperationRepository.cs" />
-    <Compile Include="AccessObject\Module.cs" />
-    <Compile Include="AccessObject\Operation.cs" />
-    <Compile Include="PermissionService\CommonPermission.cs" />
-    <Compile Include="PermissionService\CommonPermissionService.cs" />
-    <Compile Include="PermissionService\ICommonPermissionService.cs" />
-    <Compile Include="PermissionConfig\IPermissionConfigRepository.cs" />
-    <Compile Include="PermissionConfig\OperationPermissionConfig.cs" />
-    <Compile Include="PermissionConfig\PermissionConfigAccessObjectSpecification.cs" />
-    <Compile Include="PermissionConfig\PermissionConfigRolesSpecification.cs" />
-    <Compile Include="PermissionConfig\PermissionConfig.cs" />
-    <Compile Include="PermissionService\OperationPermission.cs" />
+    <Compile Include="AccessObjects\AccessObject.cs" />
+    <Compile Include="AccessObjects\AccessObjectMuduleSpecification.cs" />
+    <Compile Include="AccessObjects\IAccessObjectRepository.cs" />
+    <Compile Include="AccessObjects\IModuleRepository.cs" />
+    <Compile Include="AccessObjects\IOperationRepository.cs" />
+    <Compile Include="AccessObjects\Module.cs" />
+    <Compile Include="AccessObjects\Operation.cs" />
+    <Compile Include="PermissionServices\CommonPermission.cs" />
+    <Compile Include="PermissionServices\CommonPermissionService.cs" />
+    <Compile Include="PermissionServices\ICommonPermissionService.cs" />
+    <Compile Include="PermissionConfigs\IPermissionConfigRepository.cs" />
+    <Compile Include="PermissionConfigs\OperationPermissionConfig.cs" />
+    <Compile Include="PermissionConfigs\PermissionConfigAccessObjectSpecification.cs" />
+    <Compile Include="PermissionConfigs\PermissionConfigRolesSpecification.cs" />
+    <Compile Include="PermissionConfigs\PermissionConfig.cs" />
+    <Compile Include="PermissionServices\OperationPermission.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource\Messages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Messages.resx</DependentUpon>
     </Compile>
-    <Compile Include="RoleInheritRelation\IRoleInheritRelationService.cs" />
-    <Compile Include="Role\RoleCategorySpecifaction.cs" />
-    <Compile Include="Role\RoleInheritType.cs" />
-    <Compile Include="Role\IRoleCategoryRepository.cs" />
-    <Compile Include="Role\IRoleRepository.cs" />
-    <Compile Include="Role\Role.cs" />
-    <Compile Include="Role\RoleCategory.cs" />
+    <Compile Include="Roles\IRoleInheritRelationService.cs" />
+    <Compile Include="Roles\RoleCategorySpecifaction.cs" />
+    <Compile Include="Roles\RoleInheritType.cs" />
+    <Compile Include="Roles\IRoleCategoryRepository.cs" />
+    <Compile Include="Roles\IRoleRepository.cs" />
+    <Compile Include="Roles\Role.cs" />
+    <Compile Include="Roles\RoleCategory.cs" />
     <Compile Include="UserRoleRelation\IUserRoleRelationService.cs" />
-    <Compile Include="User\IUserRepository.cs" />
-    <Compile Include="User\User.cs" />
+    <Compile Include="Users\IUserRepository.cs" />
+    <Compile Include="Users\User.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="AccessObject\_AccessObject.cd" />
-    <None Include="PermissionConfig\_PermissionConfig.cd" />
-    <None Include="PermissionService\_PermissionService.cd" />
-    <None Include="RoleInheritRelation\_RoleInheritRelation.cd" />
-    <None Include="Role\_Role.cd" />
-    <None Include="UserRoleRelation\_UserRoleRelation.cd" />
-    <None Include="User\_User.cd" />
+    <None Include="AccessObjects\_UML.cd" />
+    <None Include="PermissionConfigs\_UML.cd" />
+    <None Include="PermissionServices\_UML.cd" />
+    <None Include="Roles\_UML.cd" />
+    <None Include="UserRoleRelation\_UML.cd" />
+    <None Include="Users\_UML.cd" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resource\Messages.resx">

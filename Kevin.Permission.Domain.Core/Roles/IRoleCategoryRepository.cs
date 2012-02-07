@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Kevin.Infrastructure.Domain;
+
+namespace Kevin.Permission.Domain.Core.Roles
+{
+    /// <summary>
+    /// 角色类型数据仓库接口
+    /// </summary>
+    public interface IRoleCategoryRepository : IRepository<RoleCategory, int>
+    {
+    }
+}

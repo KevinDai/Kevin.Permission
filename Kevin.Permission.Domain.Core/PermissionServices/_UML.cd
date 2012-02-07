@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Kevin.Permission.Domain.Core.PermissionServices.CommonPermission">
+    <Position X="3.75" Y="1.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAgAQAAAAAAAAwAAAIAAAAEBAAAAAQ=</HashCode>
+      <FileName>PermissionServices\CommonPermission.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AccessObject" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="PermissionConfigs" />
+      <Property Name="OperationPermissions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Kevin.Permission.Domain.Core.PermissionServices.CommonPermissionService" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="3" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAACAAAAAAAAAAAAAEAAIAAAIAABAAAEAAA=</HashCode>
+      <FileName>PermissionServices\CommonPermissionService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Kevin.Permission.Domain.Core.PermissionServices.OperationPermission">
+    <Position X="0.5" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAEAAAAAAAQ=</HashCode>
+      <FileName>PermissionServices\OperationPermission.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kevin.Permission.Domain.Core.PermissionConfigs.PermissionConfig" Collapsed="true">
+    <Position X="7.75" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAggICAAAAAEAAAACAAAAIAACJAAAAACEEAAAA=</HashCode>
+      <FileName>PermissionConfigs\PermissionConfig.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Kevin.Permission.Domain.Core.AccessObjects.AccessObject" Collapsed="true">
+    <Position X="7.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgQAAAiAACgAAAAAAAwAAQAAAIAAAAAAIAACAAQAAA=</HashCode>
+      <FileName>AccessObjects\AccessObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Kevin.Permission.Domain.Core.PermissionServices.ICommonPermissionService">
+    <Position X="10.25" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>PermissionServices\ICommonPermissionService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>

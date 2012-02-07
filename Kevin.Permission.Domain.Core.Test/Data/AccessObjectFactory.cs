@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Kevin.Permission.Domain.Core.Test
+namespace Kevin.Permission.Domain.Core.Test.Data
 {
+    using Kevin.Permission.Domain.Core.AccessObjects;
+
     public static class AccessObjectFactory
     {
         public static AccessObject CreateAcessObject(int id, bool rangeAccess)

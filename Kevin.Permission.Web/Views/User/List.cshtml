@@ -1,0 +1,9 @@
+﻿@model UserListViewModel 
+@{
+    ViewBag.Title = "List";
+}
+@Html.Grid(Model.Users).Columns(column =>
+    {
+        column.For(u => u.Name).Named("名称");
+        column.For(u => u.Code).Named("编码");
+    });

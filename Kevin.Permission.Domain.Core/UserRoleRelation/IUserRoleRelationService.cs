@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using Kevin.Infrastructure.Domain;
 
-namespace Kevin.Permission.Domain.Core
+namespace Kevin.Permission.Domain.Core.UserRoleRelation
 {
+    using Users;
+    using Roles;
+
     /// <summary>
     /// 用户角色关联关系服务接口
     /// </summary>

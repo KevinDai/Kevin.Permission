@@ -6,7 +6,7 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace Kevin.Permission.Domain.Entity.Mapping
 {
-    using Kevin.Permission.Domain.Core;
+    using Kevin.Permission.Domain.Core.Roles;
 
     public class RoleCategoryMap : EntityTypeConfiguration<RoleCategory>
     {
