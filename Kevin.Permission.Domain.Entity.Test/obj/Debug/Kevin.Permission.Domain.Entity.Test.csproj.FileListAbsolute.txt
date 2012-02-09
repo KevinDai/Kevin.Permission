@@ -16,3 +16,5 @@ E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity.Test\bin\De
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity.Test\bin\Debug\Kevin.Infrastructure.Domain.EntityFramework.xml
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity.Test\bin\Debug\Kevin.Permission.Infrastructure.dll
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity.Test\bin\Debug\Kevin.Permission.Infrastructure.pdb
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity.Test\bin\Debug\EntityFramework.dll
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity.Test\bin\Debug\EntityFramework.xml

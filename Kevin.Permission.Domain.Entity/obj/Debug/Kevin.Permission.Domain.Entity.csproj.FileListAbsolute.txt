@@ -17,3 +17,5 @@ E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\bin\Debug\K
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\obj\Debug\Kevin.Permission.Domain.Entity.Resource.Messages.resources
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\obj\Debug\GenerateResource.read.1.tlog
 E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\obj\Debug\GenerateResource.write.1.tlog
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\bin\Debug\EntityFramework.dll
+E:\Project\MyProject\Kevin.Permission\Kevin.Permission.Domain.Entity\bin\Debug\EntityFramework.xml
